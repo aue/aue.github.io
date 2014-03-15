@@ -5,6 +5,7 @@ body {
     min-width: 300px;
 }
 
+@-ms-viewport {width: device-width;}
 *, *:before, *:after {box-sizing: border-box; -moz-box-sizing: border-box;}
 
 a {color: #045164; text-decoration: none;}
@@ -207,56 +208,6 @@ header h1 {margin: 0; letter-spacing: -2px; font-size: 3em; line-height: 0.9em; 
     -webkit-perspective: 2000;
 }
 
-/*@-webkit-keyframes activateModal {
-    0% {
-        visibility: visible;
-        opacity: 0;
-    }
-    100% {
-        opacity: 1; 
-        -webkit-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        -moz-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        -ms-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        -o-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-    }
-}
-
-@keyframes activateModal {
-    0% {
-        visibility: visible;
-        opacity: 0;
-    }
-    100% {
-        opacity: 1; 
-        -webkit-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        -moz-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        -ms-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        -o-transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-        transform: scale(1) rotateX(0deg) translateY(0px) translateZ(0);
-    }
-}
-
-#contact .message {
-    -webkit-transition: 1s linear;
-    position: absolute;
-    background: rgb(255, 255, 255);
-    padding: 2em 3em;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.42);
-    left: 50%;
-    width: 20em;
-    margin-left: -10em;
-    transform: scale(0.25);
-}
-
-#contact:hover .message {
-    -webkit-transform: rotateX(60deg) translateY(200px) scale(1);
-    -webkit-animation: activateModal 1s;
-    -moz-animation: activateModal 1s infinite;
-    -o-animation: activateModal 1s infinite;
-    animation: activateModal 1s;
-}*/
-
 #contact a {
     display: inline-block; 
     margin: 0 auto; 
@@ -277,18 +228,3 @@ footer {
 footer .align-left {display: inline-block;}
 footer p {margin: 0;}
 footer h2 {margin: 0; text-align: left;}
-
-/* Smaller than standard 960 (devices and browsers) *
-@media only screen and (max-width: 959px) {}
- 
-/* Tablet Portrait size to standard 960 (devices and browsers) *
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
- 
-/* All Mobile Sizes (devices and browser) *
-@media only screen and (max-width: 767px) {}
- 
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) *
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
- 
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) *
-@media only screen and (max-width: 479px) {}*/

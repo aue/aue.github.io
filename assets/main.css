@@ -1,19 +1,22 @@
 body {
     background: rgb(240,240,240);
-    color: #000;
-    font-family: 'Lato', sans-serif;
+    color: #222;
+    font-size: 1.25em;
+    font-family: 'EB Garamond', 'Georgia', serif;
     min-width: 300px;
+    line-height: 2em;
+    padding: 2.5em;
 }
 
 @-ms-viewport {width: device-width;}
 *, *:before, *:after {box-sizing: border-box; -moz-box-sizing: border-box;}
 
-a {color: #045164; text-decoration: none;}
+a {color: #078dae; text-decoration: none;}
 a:hover {color: #9CD6E0; text-decoration: underline;}
 a:active, a:focus {color: #045164;}
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
     text-align: center;
     letter-spacing: -1px;
 }
@@ -24,17 +27,19 @@ h4 {font-size: 1em;}
 h5 {font-size: 0.75em;}
 h6 {font-size: 0.5em;}
 
+hr {border: 0; height: 0; border-top: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(255,255,255,0.25);}
+
 .align-left {text-align: left;}
 .align-center {text-align: center;}
 .align-right {text-align: right;}
 
 .button {
-    display: block; 
-    margin: 5px 0; 
-    background: rgb(0,128,0); 
-    padding: 0.5em 1em; 
-    color: #FFF; 
-    text-decoration: none; 
+    display: block;
+    margin: 5px 0;
+    background: rgb(0,128,0);
+    padding: 0.5em 1em;
+    color: #FFF;
+    text-decoration: none;
     border-radius: 2em;
     max-width: 500px;
     text-align: center;
@@ -42,7 +47,7 @@ h6 {font-size: 0.5em;}
 .button:hover {text-decoration: none; color: #FFF; background: rgba(0,128,0,0.75);}
 
 .wrapper {
-    margin: 0 auto;
+    margin: 2.5em auto;
     width: 90%;
     max-width: 1200px;
     padding: 2.5em 0;
@@ -54,37 +59,76 @@ h6 {font-size: 0.5em;}
     clear: both;
 }
 
+#wrapper {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+}
+
 header {
-    background: #343131;
+    background: linear-gradient(to bottom, red, #f06d06) #343131;
     text-align: center;
     overflow: hidden;
     padding: 0.5em 0;
+    margin-bottom: 2.5em;
     color: #FFF;
+    height: 20em;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-width: 1px 0;
 }
 
-header h1 {margin: 0; letter-spacing: -2px; font-size: 3em; line-height: 0.9em; color: #9CD6E0;}
+header h1 {
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+ }
 
-@media only screen and (min-width: 600px) {
-    header .wrapper {
-        display: -webkit-flex;
-        display: -ms-flex;
-        display: flex;
-        -webkit-align-items: center;
-        -ms-align-items: center;
-        align-items: center;
-        justify-content: space-between;
-    }
-    header h1 {
-        font-size: 4em; 
-        -webkit-flex: none;
-        -ms-flex: none;
-        flex: none;
-    }
-    header p {margin-left: 2em;}
+header svg {width: 50%; margin: 6em 0 0;}
+
+header svg path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    stroke: rgb(240,240,240);
+    fill: none;
+    -webkit-animation: dash 2s ease forwards;
 }
 
-@media only screen and (min-width: 980px) {
-    header h1 {font-size: 5.5em;}
+header svg path.a1 {stroke-dasharray: 60; stroke-dashoffset: 60;}
+header svg path.a1s {stroke-dasharray: 10; stroke-dashoffset: 10;}
+header svg path.b {stroke-dasharray: 60; stroke-dashoffset: 60;}
+header svg path.r {stroke-dasharray: 25; stroke-dashoffset: 25;}
+header svg path.a2 {stroke-dasharray: 40; stroke-dashoffset: 40;}
+header svg path.h {stroke-dasharray: 60; stroke-dashoffset: 60;}
+header svg path.a3 {stroke-dasharray: 40; stroke-dashoffset: 40;}
+header svg path.m {stroke-dasharray: 50; stroke-dashoffset: 50;}
+header svg path.y {stroke-dasharray: 150; stroke-dashoffset: 150;}
+header svg path.u {stroke-dasharray: 40; stroke-dashoffset: 40;}
+header svg path.e {stroke-dasharray: 40; stroke-dashoffset: 40;}
+header svg path.n {stroke-dasharray: 40; stroke-dashoffset: 40;}
+
+@-webkit-keyframes dash {
+    to {stroke-dashoffset: 0;}
+}
+
+@media only screen and (max-width: 599px) {
+    body {padding: 0;}
+    header {height: auto; padding: 2em 0;}
+    header svg {width: 80%; margin: 1em 0 -1em;}
+    main {width: 80%;}
+    footer {padding: 2em 0;}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 979px) {
+    body {padding: 1.5em;}
+    footer {padding: 2.5em 0;}
 }
 
 #pane {
@@ -95,7 +139,6 @@ header h1 {margin: 0; letter-spacing: -2px; font-size: 3em; line-height: 0.9em; 
 }
 
 @media only screen and (max-width: 599px) {
-    #pane {padding: 1px 0 0; margin: -1px 0 0;}
 }
 
 #pane .background {
@@ -173,7 +216,7 @@ header h1 {margin: 0; letter-spacing: -2px; font-size: 3em; line-height: 0.9em; 
         transition: background-color 0.5s linear, box-shadow 0.5s linear;
         width: 50%;
     }
-    
+
     #about article.active {
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -209,20 +252,21 @@ header h1 {margin: 0; letter-spacing: -2px; font-size: 3em; line-height: 0.9em; 
 }
 
 #contact a {
-    display: inline-block; 
-    margin: 0 auto; 
-    background: rgb(0,128,0); 
-    padding: 1em 1.5em; 
-    color: #FFF; 
-    text-decoration: none; 
-    border-radius: 2em; 
+    display: inline-block;
+    margin: 0 auto;
+    background: rgb(0,128,0);
+    padding: 1em 1.5em;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 2em;
     min-width: 200px;
 }
 
 footer {
-    background: #343131;
-    color: #FFF;
+    border-top: 1px solid rgba(0,0,0,0.1);
     text-align: center;
+    padding-top: 2.5em;
+    margin-top: 2.5em;
 }
 
 footer .align-left {display: inline-block;}

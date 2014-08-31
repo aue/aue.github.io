@@ -2,7 +2,7 @@ body {
     background: rgb(250,250,250);
     color: #222;
     font-size: 1.2em;
-    font-family: 'Lato', 'Arial', sans-serif;
+    font-family: 'Segoe UI', 'Myriad Pro', 'Arial', sans-serif;
     min-width: 300px;
     line-height: 2em;
     padding: 0;
@@ -57,16 +57,8 @@ hr {border: 0; height: 0; border-top: 2px solid rgba(0,0,0,0.1); margin: 0;}
     clear: both;
 }
 
-main {
-    max-width: 55em;
-    margin: 2.5em auto;
-    font-family: 'EB Garamond', 'Georgia', serif;
-}
-
-main h1, main h2, main h3, main .h3 {text-shadow: 0 2px 0 #9CD6E0;}
-
 header {
-    background: linear-gradient(to bottom, rgba(69,150,218,0.7), rgba(128,169,171,0.7)), url(img/starbg.jpg) center top #80A9AB;
+    background: url(img/starbg.jpg) center center #80A9AB; /* linear-gradient(to bottom, rgba(69,150,218,0.7), rgba(128,169,171,0.7)) */
     background-size: cover;
     text-align: center;
     overflow: hidden;
@@ -86,55 +78,101 @@ header svg {
 }
 
 header svg path {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2px;
     stroke: rgb(240,240,240);
     fill: none;
+}
+body:not(.ie) header svg path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
     -webkit-animation: dash 1.5s ease-out forwards;
     animation: dash 1.5s ease-out forwards;
     opacity: 0;
 }
 
-header svg path.a1 {stroke-dasharray: 60; stroke-dashoffset: 60;}
-header svg path.a1s {stroke-dasharray: 10; stroke-dashoffset: 10;}
-header svg path.b {stroke-dasharray: 60; stroke-dashoffset: 60;}
-header svg path.r {stroke-dasharray: 25; stroke-dashoffset: 25;}
-header svg path.a2 {stroke-dasharray: 40; stroke-dashoffset: 40;}
-header svg path.h {stroke-dasharray: 60; stroke-dashoffset: 60;}
-header svg path.a3 {stroke-dasharray: 40; stroke-dashoffset: 40;}
-header svg path.m {stroke-dasharray: 50; stroke-dashoffset: 50;}
-header svg path.y {stroke-dasharray: 150; stroke-dashoffset: 150;}
-header svg path.u {stroke-dasharray: 40; stroke-dashoffset: 40;}
-header svg path.e {stroke-dasharray: 40; stroke-dashoffset: 40;}
-header svg path.n {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.a1 {stroke-dasharray: 60; stroke-dashoffset: 60;}
+body:not(.ie) header svg path.a1s {stroke-dasharray: 10; stroke-dashoffset: 10;}
+body:not(.ie) header svg path.b {stroke-dasharray: 60; stroke-dashoffset: 60;}
+body:not(.ie) header svg path.r {stroke-dasharray: 25; stroke-dashoffset: 25;}
+body:not(.ie) header svg path.a2 {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.h {stroke-dasharray: 60; stroke-dashoffset: 60;}
+body:not(.ie) header svg path.a3 {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.m {stroke-dasharray: 50; stroke-dashoffset: 50;}
+body:not(.ie) header svg path.y {stroke-dasharray: 150; stroke-dashoffset: 150;}
+body:not(.ie) header svg path.u {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.e {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.n {stroke-dasharray: 40; stroke-dashoffset: 40;}
 
 @-webkit-keyframes dash {to {stroke-dashoffset: 0; opacity: 1;}}
 @keyframes dash {to {stroke-dashoffset: 0; opacity: 1;}}
 
 nav {
     text-align: center;
-    background: #B2DBDD;
     color: #FFF;
     position: relative;
     max-width: 55em;
     margin: 0 auto;
 }
-nav .wrapper {background: #B2DBDD;}
-nav.fixed .wrapper {
-    position: fixed;
-    max-width: none;
-    top: 0;
-    left: 0;
-    right: 0;
+
+nav ul {margin: 0; padding: 0;}
+nav li {
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.4);
 }
-nav ul {margin: 0;}
-nav li {display: inline-block;}
-nav li a {padding: 0.5em 1.25em; display: block; color: #FFF;}
-nav li.logo {float: left; margin: 0.5em 0; position: absolute; display: block; opacity: 0; text-transform: uppercase; font-size: .85em; line-height: 2.75em;}
-nav.fixed li.logo {opacity: 1; transition: opacity 0.5s ease;}
+nav li a {
+    padding: 0.5em 1.25em 1em;
+    display: block;
+    color: #FFF;
+}
+nav li.logo {
+    float: left;
+    margin: 0.75em 1.25em 0;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    font-size: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+    nav.fixed .wrapper {
+        /*background: url(img/starbg.jpg) center top #1C2F42;*/
+        background: #1C2F42;
+        background-size: cover;
+        transition: background 0.5s ease;
+        -webkit-transition: background 0.5s ease;
+        position: fixed;
+        max-width: none;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    nav.fixed li a {
+        padding-bottom: 0.5em;
+        -webkit-transition: padding 0.5s ease;
+        transition: padding 0.5s ease;
+    }
+}
+@media only screen and (min-width: 980px) {
+    nav.fixed li.logo {
+        opacity: 1;
+        -webkit-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+    }
+}
+
+main {
+    max-width: 57em;
+    margin: 2.5em auto;
+    padding: 0 2.5em;
+    font-family: 'EB Garamond', 'Georgia', serif;
+}
+
+main h1, main h2, main h3, main .h3 {text-shadow: 0 2px 0 #9CD6E0;}
 
 section {margin: 2.5em auto;}
 /*section h1 {border-top: 2px solid rgba(0,0,0,0.1); padding: 1em 0 0.5em;}*/
@@ -151,7 +189,10 @@ section.works .item {
     float: left;
     margin: 1em 0;'
 }
-section.works .item img {float: left; margin: 0 1em 0 0;}
+section.works .item h3 {margin: 0.01em 0 0;}
+section.works .item h3 a {color: #466067;}
+section.works .item img {float: left; margin: 0 1em 0 0; width: 200px; height: 200px;}
+section.works .item:nth-of-type(even) img {margin-left: 1em;}
 
 section.links ul {padding: 0 0 0 20px;}
 
@@ -170,21 +211,16 @@ footer h3 {margin: 0;}
 
 /* Responsive */
 @media only screen and (max-width: 599px) {
-    body {padding: 0;}
-    header {height: auto; padding: 2em 0;}
-    header svg {width: 80%; margin: 1em 0 -1em;}
-    main {width: 80%;}
-    footer {}
-
-    section.half, section.works .item {width: auto;}
-    section.works .item {float: none; text-align: center;}
-    section.works .item img {float: none; margin: 1em;}
+    header svg {width: auto; margin: 2.5em 2.5em 0.5em;}
+    nav {height: auto !important;}
 }
 
 @media only screen and (min-width: 600px) and (max-width: 979px) {
-    body {}
-    footer {}
+    header svg {margin: 2.5em 2.5em 1.5em;}
+    section.half {width: 65%;}
 }
-
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 979px) {
+    section.half, section.works .item {width: auto;}
+    section.works .item {float: none; text-align: center;}
+    section.works .item img {float: none; margin: 1em;}
 }

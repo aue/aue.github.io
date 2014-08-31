@@ -1,3 +1,7 @@
+if (navigator.userAgent.indexOf("MSIE") > -1) {
+    document.body.classList.add("ie10");
+}
+
 $(document).ready(function() {
     $('nav').height($('nav .wrapper').outerHeight());
     NavOffset = $('nav').offset().top;

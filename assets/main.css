@@ -1,40 +1,44 @@
 body {
-    background: rgb(240,240,240);
-    color: #000;
-    font-family: 'Lato', sans-serif;
+    background: rgb(250,250,250);
+    color: #222;
+    font-size: 1.2em;
+    font-family: 'Segoe UI', 'Myriad Pro', 'Arial', sans-serif;
     min-width: 300px;
+    line-height: 2em;
+    padding: 0;
 }
 
 @-ms-viewport {width: device-width;}
 *, *:before, *:after {box-sizing: border-box; -moz-box-sizing: border-box;}
 
-a {color: #045164; text-decoration: none;}
+a {color: #078dae; text-decoration: none;}
 a:hover {color: #9CD6E0; text-decoration: underline;}
 a:active, a:focus {color: #045164;}
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .h3 {
     font-family: 'Fjalla One', sans-serif;
-    text-align: center;
     letter-spacing: -1px;
 }
 h1 {font-size: 2.5em;}
 h2 {font-size: 2em;}
-h3 {font-size: 1.5em;}
+h3, .h3 {font-size: 1.5em; font-weight: normal;}
 h4 {font-size: 1em;}
 h5 {font-size: 0.75em;}
 h6 {font-size: 0.5em;}
+
+hr {border: 0; height: 0; border-top: 2px solid rgba(0,0,0,0.1); margin: 0;}
 
 .align-left {text-align: left;}
 .align-center {text-align: center;}
 .align-right {text-align: right;}
 
 .button {
-    display: block; 
-    margin: 5px 0; 
-    background: rgb(0,128,0); 
-    padding: 0.5em 1em; 
-    color: #FFF; 
-    text-decoration: none; 
+    display: block;
+    margin: 5px 0;
+    background: rgb(0,128,0);
+    padding: 0.5em 1em;
+    color: #FFF;
+    text-decoration: none;
     border-radius: 2em;
     max-width: 500px;
     text-align: center;
@@ -42,189 +46,181 @@ h6 {font-size: 0.5em;}
 .button:hover {text-decoration: none; color: #FFF; background: rgba(0,128,0,0.75);}
 
 .wrapper {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 1200px;
-    padding: 2.5em 0;
+    max-width: 55em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.clear:after, .wrapper:after, #pane:after {
+.clear:after, .wrapper:after, header:after, footer:after, section:after {
     display: table;
     content: '';
     clear: both;
 }
 
 header {
-    background: #343131;
+    background: url(img/starbg.jpg) center center #80A9AB; /* linear-gradient(to bottom, rgba(69,150,218,0.7), rgba(128,169,171,0.7)) */
+    background-size: cover;
     text-align: center;
     overflow: hidden;
-    padding: 0.5em 0;
     color: #FFF;
 }
 
-header h1 {margin: 0; letter-spacing: -2px; font-size: 3em; line-height: 0.9em; color: #9CD6E0;}
-
-@media only screen and (min-width: 600px) {
-    header .wrapper {
-        display: -webkit-flex;
-        display: -ms-flex;
-        display: flex;
-        -webkit-align-items: center;
-        -ms-align-items: center;
-        align-items: center;
-        justify-content: space-between;
-    }
-    header h1 {
-        font-size: 4em; 
-        -webkit-flex: none;
-        -ms-flex: none;
-        flex: none;
-    }
-    header p {margin-left: 2em;}
+header h1 {
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
 }
 
-@media only screen and (min-width: 980px) {
-    header h1 {font-size: 5.5em;}
+header svg {
+    width: 20em;
+    margin: 4.5em 0 3.5em;
 }
 
-#pane {
-    background-size: cover;
-    position: relative;
-    background-position: center top;
-    padding: 0.5em 0;
+header svg path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    stroke: rgb(240,240,240);
+    fill: none;
+}
+body:not(.ie) header svg path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    -webkit-animation: dash 1.5s ease-out forwards;
+    animation: dash 1.5s ease-out forwards;
+    opacity: 0;
 }
 
-@media only screen and (max-width: 599px) {
-    #pane {padding: 1px 0 0; margin: -1px 0 0;}
-}
+body:not(.ie) header svg path.a1 {stroke-dasharray: 60; stroke-dashoffset: 60;}
+body:not(.ie) header svg path.a1s {stroke-dasharray: 10; stroke-dashoffset: 10;}
+body:not(.ie) header svg path.b {stroke-dasharray: 60; stroke-dashoffset: 60;}
+body:not(.ie) header svg path.r {stroke-dasharray: 25; stroke-dashoffset: 25;}
+body:not(.ie) header svg path.a2 {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.h {stroke-dasharray: 60; stroke-dashoffset: 60;}
+body:not(.ie) header svg path.a3 {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.m {stroke-dasharray: 50; stroke-dashoffset: 50;}
+body:not(.ie) header svg path.y {stroke-dasharray: 150; stroke-dashoffset: 150;}
+body:not(.ie) header svg path.u {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.e {stroke-dasharray: 40; stroke-dashoffset: 40;}
+body:not(.ie) header svg path.n {stroke-dasharray: 40; stroke-dashoffset: 40;}
 
-#pane .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-position: center top;
-    background-size: cover;
-}
+@-webkit-keyframes dash {to {stroke-dashoffset: 0; opacity: 1;}}
+@keyframes dash {to {stroke-dashoffset: 0; opacity: 1;}}
 
-#pane > section {
-    z-index: 1;
-    position: relative;
-    margin: 2.5em 0;
-}
-
-#pane section > .wrapper > h2 {margin-top: 0;}
-
-#pane h2:after {
-    display: block;
-    height: 2px;
-    background-color: #9CD6E0;
-    content: '';
-    margin: 0.4em auto 0;
-    width: 3.5em;
-}
-
-#pane .wrapper {
-    background: rgba(255,255,255,0.95);
-    margin: 0 auto;
-    padding: 2.5em;
-}
-
-#about {
-    overflow: hidden;
-}
-
-#about article {
-    box-sizing: border-box;
-    min-height: 1px;
-}
-
-#about article h3:after {
-    display: block;
-    height: 2px;
-    background-color: #9CD6E0;
-    content: '';
-    margin: 0.4em auto 0;
-    width: 3em;
-}
-
-#about article .image {height: 7em; width: 7em; margin: 0 auto;}
-#about article .image img {width: 100%; height: 100%; border-radius: 100%;}
-
-@media only screen and (max-width: 599px) {
-    #about .wrapper {background: none; padding: 0;}
-    #about article {
-        background: rgba(255,255,255,0.95);
-        margin: 2.5em 0 0;
-        padding: 1em;
-    }
-    #about article:first-of-type {margin: 0;}
-    #about article h3 {font-size: 2em;}
-    #about article h3:after {width: 3.5em;}
-}
-
-@media only screen and (min-width: 600px) {
-    #about article {
-        display: block;
-        float: left;
-        -webkit-transition: background-color 0.5s linear, box-shadow 0.5s linear;
-        -moz-transition: background-color 0.5s linear, box-shadow 0.5s linear;
-        transition: background-color 0.5s linear, box-shadow 0.5s linear;
-        width: 50%;
-    }
-    
-    #about article.active {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-    }
-}
-
-@media only screen and (min-width: 980px) {
-    #about article {width: 25%;}
-    #about .clear {display: none;}
-}
-
-#about article p {padding: 0; margin: 1.5em 2em;}
-
-#projects {}
-#projects li {list-style-type: none; margin: 0 0 2.5em;}
-#projects li:after {content: ''; display: table; clear: both;}
-#projects li:last-of-type {margin-bottom: 0;}
-#projects li h3 {text-align: left; margin: 0.5em 0;}
-#projects li img {float: left; margin: 1em 1em 1em 0; width: 5em;}
-#projects li aside {float: right; width: calc(100% - 7em);}
-
-@media only screen and (max-width: 599px) {
-   #projects li {text-align: center; margin-bottom: 1.5em;}
-   #projects li h3 {text-align: center;}
-   #projects li img {float: none; margin: 1em 0;}
-   #projects li aside {float: none; width: auto;}
-   #projects li p {text-align: left;}
-}
-
-#contact {
+nav {
     text-align: center;
-    -webkit-perspective: 2000;
+    color: #FFF;
+    position: relative;
+    max-width: 55em;
+    margin: 0 auto;
 }
 
-#contact a {
-    display: inline-block; 
-    margin: 0 auto; 
-    background: rgb(0,128,0); 
-    padding: 1em 1.5em; 
-    color: #FFF; 
-    text-decoration: none; 
-    border-radius: 2em; 
-    min-width: 200px;
+nav ul {margin: 0; padding: 0;}
+nav li {
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.4);
 }
+nav li a {
+    padding: 0.5em 1.25em 1em;
+    display: block;
+    color: #FFF;
+}
+nav li.logo {
+    float: left;
+    margin: 0.75em 1.25em 0;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    font-size: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+    nav.fixed .wrapper {
+        /*background: url(img/starbg.jpg) center top #1C2F42;*/
+        background: #1C2F42;
+        background-size: cover;
+        transition: background 0.5s ease;
+        -webkit-transition: background 0.5s ease;
+        position: fixed;
+        max-width: none;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    nav.fixed li a {
+        padding-bottom: 0.5em;
+        -webkit-transition: padding 0.5s ease;
+        transition: padding 0.5s ease;
+    }
+}
+@media only screen and (min-width: 980px) {
+    nav.fixed li.logo {
+        opacity: 1;
+        -webkit-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+    }
+}
+
+main {
+    max-width: 57em;
+    margin: 2.5em auto;
+    padding: 0 2.5em;
+    font-family: 'EB Garamond', 'Georgia', serif;
+}
+
+main h1, main h2, main h3, main .h3 {text-shadow: 0 2px 0 #9CD6E0;}
+
+section {margin: 2.5em auto;}
+/*section h1 {border-top: 2px solid rgba(0,0,0,0.1); padding: 1em 0 0.5em;}*/
+section h1 {padding: 0.5em 0;}
+section hr {margin: 2em 0;}
+section.half {width: 50%;}
+
+section.about {text-align: justify;}
+section.about .h3 {padding-right: 0.3em;}
+
+section.works {}
+section.works .item {
+    width: 50%;
+    float: left;
+    margin: 1em 0;'
+}
+section.works .item h3 {margin: 0.01em 0 0;}
+section.works .item h3 a {color: #466067;}
+section.works .item img {float: left; margin: 0 1em 0 0; width: 200px; height: 200px;}
+section.works .item:nth-of-type(even) img {margin-left: 1em;}
+
+section.links ul {padding: 0 0 0 20px;}
 
 footer {
-    background: #343131;
+    background: url(img/starbg-ground.jpg) center center #000805;
+    background-size: cover;
     color: #FFF;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.4);
+    clear: both;
     text-align: center;
 }
+footer .wrapper {margin: 2.5em auto; display: inline-block;}
+footer p {margin: 0; font-size: .75em; line-height: 1.5em;}
+footer h3 {margin: 0;}
 
-footer .align-left {display: inline-block;}
-footer p {margin: 0;}
-footer h2 {margin: 0; text-align: left;}
+
+/* Responsive */
+@media only screen and (max-width: 599px) {
+    header svg {width: auto; margin: 2.5em 2.5em 0.5em;}
+    nav {height: auto !important;}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 979px) {
+    header svg {margin: 2.5em 2.5em 1.5em;}
+    section.half {width: 65%;}
+}
+@media only screen and (max-width: 979px) {
+    section.half, section.works .item {width: auto;}
+    section.works .item {float: none; text-align: center;}
+    section.works .item img {float: none; margin: 1em;}
+}

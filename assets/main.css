@@ -83,10 +83,8 @@ header svg path {
     stroke-width: 2px;
     stroke: rgb(240,240,240);
     fill: none;
-}
-body:not(.ie) header svg path {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
     -webkit-animation: dash 1.5s ease-out forwards;
     animation: dash 1.5s ease-out forwards;
     opacity: 0;

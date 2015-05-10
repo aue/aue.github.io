@@ -4,6 +4,7 @@ body {
     font-size: 1.2em;
     line-height: 2em;
     padding: 0;
+    text-align: justify;
 }
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
@@ -183,7 +184,7 @@ section h1 {padding: 0.5em 0;}
 section hr {margin: 2em 0;}
 section.half {width: 50%;}
 
-section.about {text-align: justify;}
+section.about {}
 section.about .h3 {padding-right: 0.3em;}
 
 section.works {background: rgba(0,0,0,0.025); margin: 0 -2.5em; padding: 2.5em;}

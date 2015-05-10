@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
-<!--
-Cat
-    Cat
-        Cat
-            Cat
-    Cat
-Cat
-    No room for two!
--->
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
         <title>Abraham Yuen</title>
         <meta name="description" content="The personal site of Abraham Yuen. Appreciating developing, designing, and programming.">
-        <link href="http://fonts.googleapis.com/css?family=Fjalla+One|EB+Garamond" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="assets/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400|EB+Garamond' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/pure-min.css">
+        <link rel="stylesheet" href="assets/grids-responsive-min.css">
         <link rel="stylesheet" href="assets/main.css">
     </head>
 
@@ -40,9 +31,9 @@ Cat
             </svg>
 
             <nav>
-                <ul class="wrapper">
-                    <li class="logo">Abraham Yuen</li>
-                    <li><a href="#">About</a></li>
+                <ul>
+                    <li class="logo"><a href="#">Abraham Yuen</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#worksandprojects">Works &amp; Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -52,61 +43,79 @@ Cat
 
 
         <main>
-            <section class="about half">
-                <p><span class="h3">I'm</span> Abraham Yuen, a student currently at the <a href="http://www.ufl.edu/" target="_blank">University of Florida</a>. Appreciating developing, designing, programming— this is where I document the creative creations of mine.</p>
+            <section class="about half" id="about">
+                <h1 class="embellish">Hi,</h1>
+                <p>I'm Abraham Yuen, a student currently at the <a href="http://www.ufl.edu/" target="_blank">University of Florida</a>. Creating, designing, developing, programming— this is where I document the creative creations of mine.</p>
                 <hr>
 
                 <h3>Currently</h3>
                 <ul>
-                    <li>Majoring in Computer Engineering and expected to graduate by 2016.</li>
+                    <li>Majoring in Computer Engineering, and expected to graduate in 2016.</li>
                     <li title="Don't we all? :/">Looking for an internship.</li>
-                    <li>Secretary of the <a href="http://ufl.collegiatelink.net/organization/cuba" target="_blank">UF Association of Cuban Student Engineers</a> (ACSE) since June 2014.</li>
-                    <li>Treasurer of <a href="http://chisigmaio.org/" target="_blank">UF Chi Sigma IO</a> (ΧΣΙO) since 2014.</li>
+                    <li>Vice President of Marketing for the <a href="http://ufl.collegiatelink.net/organization/cuba" target="_blank">UF Association of Cuban Student Engineers</a> since April 2015.</li>
+                </ul>
+                
+                <h3>In the past</h3>
+                <ul>
+                    <li>Secretary for <a href="http://ufl.collegiatelink.net/organization/cuba" target="_blank">UF Association of Cuban Student Engineers</a> from April 2014 til April 2015.</li>
+                    <li>Treasurer for <a href="http://chisigmaio.org/" target="_blank">UF Chi Sigma IO</a> (ΧΣΙO) from April 2014 to April 2015.</li>
                 </ul>
 
                 <hr>
 
-                <p>Reach me by <a href="mailto:contact@abrahamyuen.com">email</a>.</p>
+                <p>Contact me by <a href="mailto:contact@abrahamyuen.com">email</a>.</p>
             </section>
 
-            <hr id="worksandprojects">
+            <section class="works" id="worksandprojects">
+                <h1 class="embellish">Works &amp; Projects</h1>
 
-            <section class="works">
-                <h1 class="align-center">Works &amp; Projects</h1>
-
-                <div class="item">
-                    <img src="assets/img/acse.jpg">
-                    <h3><a href="https://www.facebook.com/ufacse" target="_blank">Association of Cuban Student Engineers</a></h3>
-                    <p>Secretary, aside from traditional duties, launched a new identity and social media presence.</p>
+                <div class="item pure-g">
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <img class="pure-img" src="assets/img/acse.png">
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <h3><a href="https://www.facebook.com/ufacse" target="_blank">Association of Cuban Student Engineers</a></h3>
+                        <p>Currently the Vice President of Marketing, managing social media and outreach at the University of Florida. Additionally was former Secretary, which during that time, aside from traditional duties, designed and launched the <a href="https://www.behance.net/gallery/25519081/Association-of-Cuban-Student-Engineers" target="_blank">currently used branding idenity</a>.</p>
+                    </div>
                 </div>
 
-                <div class="item">
-                    <img src="assets/img/theic.jpg">
-                    <h3><a href="https://github.com/phillip50/CEN3031-Project" target="_blank">The Insect Collection</a></h3>
-                    <p>Full scale insect tracking site built with the MEAN stack for the University of Florida Entomology Department.</p>
+                <div class="item pure-g">
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <img class="pure-img" src="assets/img/theic.jpg">
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <h3><a href="https://github.com/phillip50/CEN3031-Project" target="_blank">The Insect Collection</a></h3>
+                        <p>Full scale insect tracking site built with the MEAN stack for the University of Florida Entomology Department.</p>
+                    </div>
                 </div>
 
-                <div class="item">
-                    <img src="assets/img/bft.png">
-                    <h3><a href="http://www.bowafishtech.org/" target="_blank">Bowafishtech</a></h3>
-                    <p>Personal professional front for projects in use by the public. Retired starting 2015.</p>
+                <div class="item pure-g">
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <img class="pure-img" src="assets/img/bft.png">
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <h3><a href="http://www.bowafishtech.org/" target="_blank">Bowafishtech</a></h3>
+                        <p>Personal professional front for projects in use by the public. Retired starting 2015.</p>
+                    </div>
                 </div>
 
-                <div class="item">
-                    <img src="assets/img/bettergaia.png">
-                    <h3><a href="http://www.bettergaia.com/" target="_blank">BetterGaia</a></h3>
-                    <p>Browser extension for Gaia Online, a social networking website. Since August 2008.</p>
+                <div class="item pure-g">
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <img class="pure-img" src="assets/img/bettergaia.png">
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <h3><a href="http://www.bettergaia.com/" target="_blank">BetterGaia</a></h3>
+                        <p>Browser extension for Gaia Online, a social networking website. Since August 2008.</p>
+                    </div>
                 </div>
             </section>
 
-            <hr id="contact">
-
-            <section class="links half">
-                <h1 class="align-center">Et cetera</h1>
-
+            <section class="links half" id="contact">
+                <h1 class="embellish">Et cetera</h1>
                 <ul>
                     <li>See what I'm working on at <a href="https://github.com/atthehotcorner" target="_blank">GitHub</a>.</li>
                     <li>Visit my professional profile at <a href="http://www.linkedin.com/pub/abraham-yuen/64/1a1/a41" target="_blank">LinkedIn</a>.</li>
+                    <li>View my design work at <a href="http://www.behance.net/ayuen" target="_blank">Behance</a>.</li>
                     <li>Reach me by old fashioned <a href="mailto:contact@abrahamyuen.com">email</a>.</li>
                 </ul>
             </section>
@@ -114,12 +123,12 @@ Cat
 
         <footer>
             <div class="wrapper align-left">
-                <p>&copy; 2015</p>
-                <h3>Abraham Yuen</h3>
+                <small>&copy; 2015</small>
+                Abraham Yuen
             </div>
         </footer>
 
-        <script src="assets/jquery-2.0.3.min.js"></script>
+        <script src="assets/jquery-2.1.4.min.js"></script>
         <script src="assets/main.js"></script>
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

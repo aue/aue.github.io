@@ -1,32 +1,45 @@
 body {
-    background: rgb(250,250,250);
+    background: #FFF;
     color: #222;
     font-size: 1.2em;
-    font-family: 'Segoe UI', 'Myriad Pro', 'Arial', sans-serif;
-    min-width: 300px;
     line-height: 2em;
     padding: 0;
 }
 
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+    font-family: 'EB Garamond', 'Georgia', serif;
+}
+
 @-ms-viewport {width: device-width;}
 *, *:before, *:after {box-sizing: border-box; -moz-box-sizing: border-box;}
+ul {list-style-type: square;}
 
-a {color: #078dae; text-decoration: none;}
-a:hover {color: #9CD6E0; text-decoration: underline;}
-a:active, a:focus {color: #045164;}
+a {color: #0277BD; text-decoration: none;}
+a:hover {text-decoration: underline;}
+a:active, a:focus {color: #004A76;}
 
 h1, h2, h3, h4, h5, h6, .h3 {
-    font-family: 'Fjalla One', sans-serif;
-    letter-spacing: -1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.05em;
 }
 h1 {font-size: 2.5em;}
 h2 {font-size: 2em;}
-h3, .h3 {font-size: 1.5em; font-weight: normal;}
+h3 {font-size: 1.5em;}
 h4 {font-size: 1em;}
 h5 {font-size: 0.75em;}
 h6 {font-size: 0.5em;}
 
-hr {border: 0; height: 0; border-top: 2px solid rgba(0,0,0,0.1); margin: 0;}
+h1.embellish {
+    display: inline-block;
+    background: #222;
+    color: #FFF;
+    padding: 0.5em 0.3em;
+    margin: 0.25em 0;
+    text-align: center;
+}
+
+hr {border: 0; height: 0; border-top: 1px solid rgba(0,0,0,0.025); margin: 0;}
 
 .align-left {text-align: left;}
 .align-center {text-align: center;}
@@ -80,13 +93,13 @@ header svg {
 header svg path {
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-width: 2px;
-    stroke: rgb(240,240,240);
+    stroke-width: 1px;
+    stroke: #FFF;
     fill: none;
     stroke-dasharray: 0;
     stroke-dashoffset: 0;
-    -webkit-animation: dash 1.5s ease-out forwards;
-    animation: dash 1.5s ease-out forwards;
+    -webkit-animation: dash 1.5s cubic-bezier(0.67,1.2,0.79,0.85) forwards;
+    animation: dash 1.5s cubic-bezier(0.67,1.2,0.79,0.85) forwards;
     opacity: 0;
 }
 
@@ -110,67 +123,59 @@ nav {
     text-align: center;
     color: #FFF;
     position: relative;
-    max-width: 55em;
-    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
-nav ul {margin: 0; padding: 0;}
+nav ul {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(34,34,34,0.5);
+}
+
 nav li {
     display: inline-block;
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 1.5em;
-    letter-spacing: -1px;
-    text-shadow: 0 2px 0 rgba(0,0,0,0.4);
+    letter-spacing: -0.05em;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 }
 nav li a {
-    padding: 0.5em 1.25em 1em;
+    padding: 0.5em 1.25em;
     display: block;
     color: #FFF;
 }
+nav li a:active, nav li a:focus {color: rgba(255,255,255,0.75);}
 nav li.logo {
     float: left;
-    margin: 0.75em 1.25em 0;
     position: absolute;
     display: block;
     opacity: 0;
-    font-size: 1em;
+    background: #222;
 }
 
-@media only screen and (min-width: 600px) {
-    nav.fixed .wrapper {
-        /*background: url(img/starbg.jpg) center top #1C2F42;*/
-        background: #1C2F42;
-        background-size: cover;
-        transition: background 0.5s ease;
-        -webkit-transition: background 0.5s ease;
+@media only screen and (min-width: 586px) {
+    nav.fixed ul {
         position: fixed;
-        max-width: none;
         top: 0;
         left: 0;
         right: 0;
     }
-    nav.fixed li a {
-        padding-bottom: 0.5em;
-        -webkit-transition: padding 0.5s ease;
-        transition: padding 0.5s ease;
-    }
 }
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 786px) {
     nav.fixed li.logo {
         opacity: 1;
-        -webkit-transition: opacity 0.5s ease;
-        transition: opacity 0.5s ease;
+        -webkit-transition: opacity 0.5s cubic-bezier(0.67,1.2,0.79,0.85);
+        transition: opacity 0.5s cubic-bezier(0.67,1.2,0.79,0.85);
     }
 }
 
 main {
-    max-width: 57em;
-    margin: 2.5em auto;
+    margin: 2.5em 0;
     padding: 0 2.5em;
-    font-family: 'EB Garamond', 'Georgia', serif;
 }
 
-main h1, main h2, main h3, main .h3 {text-shadow: 0 2px 0 #9CD6E0;}
+/*main h1, main h2, main h3 {display: inline-block; clear: both;}
+main h1:after, main h2:after, main h3:after {background: #9CD6E0; width: 100%; height: 1px; content: ''; display: block; z-index: -1; position: relative;}
+main h1:after {bottom: 2px;}
+main h3:after {bottom: 9px;}*/
 
 section {margin: 2.5em auto;}
 /*section h1 {border-top: 2px solid rgba(0,0,0,0.1); padding: 1em 0 0.5em;}*/
@@ -181,16 +186,9 @@ section.half {width: 50%;}
 section.about {text-align: justify;}
 section.about .h3 {padding-right: 0.3em;}
 
-section.works {}
-section.works .item {
-    width: 50%;
-    float: left;
-    margin: 1em 0;'
-}
-section.works .item h3 {margin: 0.01em 0 0;}
-section.works .item h3 a {color: #466067;}
-section.works .item img {float: left; margin: 0 1em 0 0; width: 200px; height: 200px;}
-section.works .item:nth-of-type(even) img {margin-left: 1em;}
+section.works {background: rgba(0,0,0,0.025); margin: 0 -2.5em; padding: 2.5em;}
+section.works .item {margin: 2em 0 0;}
+section.works .item h3 {margin: 0.75em 0 0;}
 
 section.links ul {padding: 0 0 0 20px;}
 
@@ -198,27 +196,30 @@ footer {
     background: url(img/starbg-ground.jpg) center center #000805;
     background-size: cover;
     color: #FFF;
-    text-shadow: 0 2px 0 rgba(0,0,0,0.4);
     clear: both;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 }
 footer .wrapper {margin: 2.5em auto; display: inline-block;}
-footer p {margin: 0; font-size: .75em; line-height: 1.5em;}
-footer h3 {margin: 0;}
+footer small {font-size: 0.5em; display: block; line-height: 0; margin: 0 0 -0.25em;}
 
 
 /* Responsive */
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 567px) {
     header svg {width: 75%; margin: 2.5em auto 0.5em;}
+    section.half {width: auto;}
     nav {height: auto !important;}
+    nav li {display: block;}
+    section.works .item img {padding-bottom: 1.5em;}
 }
 
-@media only screen and (min-width: 600px) and (max-width: 979px) {
+@media only screen and (min-width: 586px) and (max-width: 767px) {
     header svg {margin: 2.5em 2.5em 1.5em;}
     section.half {width: 65%;}
+    section.works .item img {padding-bottom: 1.5em;}
 }
-@media only screen and (max-width: 979px) {
-    section.half, section.works .item {width: auto;}
-    section.works .item {float: none; text-align: center;}
-    section.works .item img {float: none; margin: 1em;}
+
+@media only screen and (min-width: 768px) {
+    section.works .item img {padding-right: 1.5em;}
 }

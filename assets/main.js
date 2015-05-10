@@ -21,7 +21,7 @@ function detectIE() {
 if (detectIE()) document.body.classList.add('ie');
 
 $(document).ready(function() {
-    $('nav').height($('nav .wrapper').outerHeight());
+    $('nav').height($('nav ul li.logo').outerHeight());
     NavOffset = $('nav').offset().top;
 });
 

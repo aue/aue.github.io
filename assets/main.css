@@ -64,13 +64,29 @@ hr {border: 0; height: 0; border-top: 1px solid rgba(0,0,0,0.025); margin: 0;}
 }
 .button:hover {text-decoration: none; color: #FFF; background: rgba(0,128,0,0.75);}
 
+@-webkit-keyframes rainbowcycle {
+  0% {background-color: #4CB8C4;}
+  25% {background-color: #DD5E89;}
+  50% {background-color: #3CD3AD;}
+  75% {background-color: #F7BB97;}
+  100% {background-color: #4CB8C4;}
+}
+
+@keyframes rainbowcycle {
+  0% {background-color: #4CB8C4;}
+  25% {background-color: #DD5E89;}
+  50% {background-color: #3CD3AD;}
+  75% {background-color: #F7BB97;}
+  100% {background-color: #4CB8C4;}
+}
+
 .rainbow {
-  background: linear-gradient(to left, #DD5E89, #F7BB97) #F7BB97;
-  background: linear-gradient(to left, #4CB8C4, #3CD3AD) #4CB8C4;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.3));
+  -webkit-animation: rainbowcycle 60s infinite;
+  animation: rainbowcycle 60s infinite;
 }
 
 .wrapper {
-  max-width: 50em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -110,7 +126,6 @@ nav ul {
 nav li {
   display: inline-block;
   letter-spacing: -0.05em;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 }
 nav li a {
   padding: 0.5em 1.25em;
@@ -123,7 +138,6 @@ nav li.logo {
   position: absolute;
   display: block;
   opacity: 0;
-  background: #222;
 }
 
 @media only screen and (min-width: 586px) {
@@ -134,6 +148,7 @@ nav li.logo {
     right: 0;
     z-index: 1;
     border-bottom: 0.2em solid #fff;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
   }
 }
 @media only screen and (min-width: 786px) {
@@ -170,9 +185,11 @@ section.intro h1 {font-size: 4em; line-height: 1; font-weight: bold;}
 section.about {}
 section.about .h3 {padding-right: 0.3em;}
 
-section.works {background: rgba(0,0,0,0.025); margin: 0 -2.5em; padding: 2.5em;}
+section.works {background: rgba(0,0,0,0.025); padding-left: 0; padding-right: 0; text-align: center;}
+section.works .wrapper {text-align: left;}
 section.works .item {margin: 2em 0 0;}
 section.works .item h3 {margin: 0.75em 0 0;}
+section.works .item div:not(.image) {padding: 1em 2.5em;}
 
 section.links ul {padding: 0 0 0 20px;}
 
@@ -181,23 +198,25 @@ footer {
   clear: both;
   text-align: center;
 }
-footer .wrapper {margin: 2.5em auto; display: inline-block;}
-footer .links {}
+footer .wrapper {margin: 1.5em auto 2.5em; display: inline-block;}
+footer h1 {line-height: 1;}
 footer .links a {padding: 0.5em; margin: 0 0.5em;}
 
 /* Responsive */
-@media only screen and (max-width: 567px) {
+@media only screen and (max-width: 585px) {
   section.intro h1 {font-size: 2em;}
   section.half {width: auto;}
   nav {height: auto !important;}
   nav li {display: block;}
   section.works .item img {padding-bottom: 1.5em;}
+  footer h1 {font-size: 1.5em;}
 }
 
 @media only screen and (min-width: 586px) and (max-width: 767px) {
   section.intro h1 {font-size: 3em;}
   section.half {width: 65%;}
   section.works .item img {padding-bottom: 1.5em;}
+  footer h1 {font-size: 2em;}
 }
 
 @media only screen and (min-width: 768px) {

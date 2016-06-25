@@ -1,4 +1,4 @@
-function detectIE() {
+/*function detectIE() {
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf('MSIE ');
     var trident = ua.indexOf('Trident/');
@@ -18,7 +18,7 @@ function detectIE() {
     return false;
 }
 
-if (detectIE()) document.body.classList.add('ie');
+if (detectIE()) document.body.classList.add('ie');*/
 
 $(document).ready(function() {
     $('nav').height($('nav ul li.logo').outerHeight());

@@ -7,7 +7,7 @@ body {
 }
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
-  font-family: 'Montserrat', serif;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   letter-spacing: -0.01em;
 }
 
@@ -20,9 +20,7 @@ a:hover {text-decoration: underline;}
 a:active, a:focus {color: #004A76;}
 
 h1, h2, h3, h4, h5, h6, .h3 {
-  font-family: 'Varela Round', sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.05em;
+  font-weight: bold;
 }
 h1 {font-size: 2.5em;}
 h2 {font-size: 2em;}
@@ -97,52 +95,8 @@ hr {border: 0; height: 0; border-top: 1px solid rgba(0,0,0,0.025); margin: 0;}
   clear: both;
 }
 
-header {
-  text-align: center;
-  overflow: hidden;
-  color: #fff;
-}
-
-header h1 {
-  border: 0;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-}
-
-nav {
-  text-align: center;
-  color: #FFF;
-  position: relative;
-  font-family: 'Montserrat', sans-serif;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  background-color: rgba(34,34,34,0.5);
-}
-
-nav li {
-  display: inline-block;
-  letter-spacing: -0.05em;
-}
-nav li a {
-  padding: 0.5em 1.25em;
-  display: block;
-  color: #FFF;
-}
-nav li a:active, nav li a:focus {color: rgba(255,255,255,0.75);}
-nav li.logo {
-  float: left;
-  position: absolute;
-  display: block;
-  opacity: 0;
-}
-
 @media only screen and (min-width: 586px) {
   nav.fixed ul {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -221,4 +175,122 @@ footer .links a {padding: 0.5em; margin: 0 0.5em;}
 
 @media only screen and (min-width: 768px) {
   section.works .item img {}
+}
+
+/* New stuff */
+@keyframes kenburns {
+  0% {opacity: 0;}
+  5% {opacity: 1;}
+  95% {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
+    animation-timing-function: linear;;
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
+    opacity: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, .h3 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 2.5rem;
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 0.25em;
+  margin: 0.25rem 0;
+  text-align: center;
+}
+h2 {font-size: 2rem;}
+h3 {font-size: 1.5rem;}
+h4 {font-size: 1rem;}
+h5 {font-size: 0.75rem;}
+h6 {font-size: 0.5rem;}
+
+body {
+  background-color: #EFEFEF;
+}
+
+header {
+  position: fixed;
+  height: 100vh;
+  width: 17rem;
+}
+
+header .sidebar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  text-align: center;
+}
+
+header .sidebar .intro {
+  text-align: center;
+}
+header .sidebar .intro h1 {
+  display: block;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+header .sidebar nav ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+header .photo, header .faux-photo {
+  position: absolute;
+  top: 2rem;
+  left: 17rem;
+  width: calc(100vw - 19rem);
+  bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 2rem rgba(71, 71, 71, 0.2);
+}
+
+header .photo {
+  z-index: -1;
+  overflow: hidden;
+}
+header .photo .inner-photo {
+  width: 100%;
+  height: 100%;
+  background: url('img/background.jpg');
+  background-size: cover;
+  background-position: center left;
+  transition: 2s ease all;
+}
+header .photo.ken-burns .inner-photo {
+  width: 110%;
+  height: 110%;
+  animation: kenburns 20s infinite;
+  transition: none;
+}
+
+header .faux-photo.one {z-index: -2; background-color: #AD343E;}
+header .faux-photo.two {z-index: -3; background-color: #5EB1BF;}
+
+header.c .photo {
+  width: 8rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+main {
+  margin-left: 17rem;
+}
+
+main .intro-spacer {
+  height: 100vh;
+}
+
+main section {
+  padding: 2rem;
 }

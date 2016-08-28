@@ -1,176 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title>Abraham Yuen</title>
-    <meta name="description" content="The personal site of Abraham Yuen. Appreciating developing, designing, and programming.">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" href="assets/pure-min.css">
-    <link rel="stylesheet" href="assets/grids-responsive-min.css">
-    <link rel="stylesheet" href="assets/main.css">
-  </head>
+---
+layout: default
+---
 
-  <body>
-    <section class="intro rainbow">
-      <div class="frame">
-        <h1>This is the website of Abraham Yuen.</h1>
-        <p>College student. Computer Engineering. Miami, Florida.</p>
-      </div>
-    </section>
+<div class="home">
 
-    <header>
-      <h1>Abraham Yuen</h1>
+  <h1 class="page-heading">Posts</h1>
 
-      <nav>
-        <ul class="rainbow">
-          <li class="logo"><a href="#">Abraham Yuen</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#worksandprojects">Works &amp; Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    <main>
-      <section class="about half" id="about">
-        <h1 class="embellish">Hi,</h1>
-        <p>My name is Abraham Yuen, and I'm currently a student at the <a href="http://www.ufl.edu/" target="_blank">University of Florida</a>. Creating, designing, developing, programming— this is where I document the creative creations of mine.</p>
-        <hr>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-        <h3>Currently</h3>
-        <ul>
-          <li>Majoring in Computer Engineering, and expected to graduate in 2016.</li>
-          <li>Looking for an internship for the summer and fall.</li>
-        </ul>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-        <hr>
-
-        <p>Contact me <a href="#contact">here</a>.</p>
-      </section>
-
-      <section class="works" id="worksandprojects">
-        <h1 class="embellish">Works &amp; Projects</h1>
-
-        <div class="wrapper pure-g">
-          <div class="item pure-u-md-1-3">
-            <div class="image">
-              <img class="pure-img" src="assets/img/stratustream.png">
-            </div>
-            <div>
-              <h3>StratuStream</h3>
-              <p>An internal digital dashboard solution converting raw business data into useful business analytics for a company's products. Team project.</p>
-              <p>HTML, CSS, Javascript, React.js, Socket.io, Node.js, AWS (EC2, DynamoDB, Elastic Beanstalk)</p>
-            </div>
-          </div>
-
-          <div class="item pure-u-md-1-3">
-            <div class="image">
-              <img class="pure-img" src="assets/img/acse.png">
-            </div>
-            <div>
-              <h3><a href="https://www.facebook.com/ufacse" target="_blank">Association of Cuban Student Engineers</a></h3>
-              <p>Designed and launched a new <a href="https://www.behance.net/gallery/25519081/Association-of-Cuban-Student-Engineers" target="_blank">branding identity</a> for the organization.</p>
-            </div>
-          </div>
-
-          <div class="item pure-u-md-1-3">
-            <div class="image">
-              <img class="pure-img" src="assets/img/bettergaia.png">
-            </div>
-            <div>
-              <h3><a href="http://www.bettergaia.com/" target="_blank">BetterGaia</a></h3>
-              <p><a href="http://www.bettergaia.com/" target="_blank">Web browser extension</a> for Gaia Online, a social networking website.</p>
-              <p>HTML, CSS, Javascript, jQuery, Chrome Extension API, Firefox Add-on SDK</p>
-            </div>
-          </div>
-
-          <div class="item pure-g">
-            <div class="pure-u-1 pure-u-md-1-4">
-              <img class="pure-img" src="assets/img/codenamesun.png">
-            </div>
-            <div class="pure-u-1 pure-u-md-3-4">
-              <h3><a href="https://github.com/CodenameSun/CodenameSun" target="_blank">Codename Sun</a></h3>
-              <p>Video game developed in Unity3D game engine using various AI topics (A* search algorithm, health system).</p>
-              <p>Unity Game Engine</p>
-            </div>
-          </div>
-
-          <div class="item pure-g">
-            <div class="pure-u-1 pure-u-md-1-4">
-              <img class="pure-img" src="assets/img/sportody.png">
-            </div>
-            <div class="pure-u-1 pure-u-md-3-4">
-              <h3>Sportody Website UX Case Study</h3>
-              <p>UX Design course project tasked to find weaknesses in client Sportody.com’s website user experience. Conducted focus groups on usability and user flow, created user stories, personas and storyboards, and then presented interactive mockups of an improved website.</p>
-            </div>
-          </div>
-
-          <div class="item pure-g">
-            <div class="pure-u-1 pure-u-md-1-4">
-              <img class="pure-img" src="assets/img/theic.jpg">
-            </div>
-            <div class="pure-u-1 pure-u-md-3-4">
-              <h3><a href="https://github.com/phillip50/CEN3031-Project" target="_blank">The Insect Collection</a></h3>
-              <p>Full scale insect tracking site built with MEAN stack for the University of Florida Entomology Department. Team project.</p>
-              <p>HTML, CSS, Javascript, Node.js, MongoDB, Angular</p>
-            </div>
-          </div>
-
-          <div class="item pure-g">
-            <div class="pure-u-1 pure-u-md-1-4">
-              <img class="pure-img" src="assets/img/bft.jpg">
-            </div>
-            <div class="pure-u-1 pure-u-md-3-4">
-              <h3>Bowafishtech</h3>
-              <p>Professional brand for personal projects. Retired May 2015.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="half">
-        <h1 class="embellish">Et cetera</h1>
-        <!--<h3>Blog</h3>
-        <ul>
-          <li><a href="#">Post 1</a> April 1, 2016</li>
-          <li><a href="#">Post 2</a> April 2, 2016</li>
-          <li><a href="#">Post 3</a> April 3, 2016</li>
-        </ul>
-        <a href="#">See all posts.</a>-->
-
-        <h3>In the past</h3>
-        <ul>
-          <li>Vice President of Marketing for <a href="https://ufl.collegiatelink.net/organization/CubanEngineers" target="_blank">UF Association of Cuban Student Engineers</a> from April 2015 to April 2016.</li>
-          <li>Secretary for <a href="https://ufl.collegiatelink.net/organization/CubanEngineers" target="_blank">UF Association of Cuban Student Engineers</a> from April 2014 to April 2015.</li>
-          <li>Treasurer for <a href="https://ufl.collegiatelink.net/organization/ChiSigmaIO" target="_blank">UF Chi Sigma IO</a> (ΧΣΙO) from April 2014 to April 2015.</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer class="rainbow">
-      <div class="wrapper">
-        <h1>email me at <a class="embellish alt" href="mailto:hello@abrahamyuen.com">hello@abrahamyuen.com</a></h1>
-
-        <div class="links" id="contact">
-          <a href="https://github.com/atthehotcorner" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/yuenabraham" target="_blank">LinkedIn</a>
-          <a href="http://www.behance.net/ayuen" target="_blank">Behance</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="assets/jquery-2.1.4.min.js"></script>
-    <script src="assets/main.js"></script>
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-47258938-1', 'abrahamyuen.com');
-    ga('send', 'pageview');
-    </script>
-  </body>
-</html>
+</div>

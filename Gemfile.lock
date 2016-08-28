@@ -131,7 +131,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  minima
 
 RUBY VERSION
    ruby 2.0.0p648

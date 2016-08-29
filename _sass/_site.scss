@@ -13,6 +13,10 @@
   .site {
     padding-left: $site-header-width;
   }
+
+  .site-header.home + .site .site-content {
+    min-height: 200vh;
+  }
 }
 
 // SITE HEADER ====================================
@@ -193,6 +197,7 @@
   .site-photos-spacer {
     height: 100vh;
     display: block;
+    margin-bottom: $spacer2;
   }
 }
 

@@ -7,6 +7,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   line-height: $lh-sm;
   color: inherit;
+
+  &.embellish {
+    background: $body-color;
+    color: $body-bg;
+    display: inline-block;
+    padding: 0.25em;
+  }
 }
 
 h1 { font-size: $fs-h1; }
@@ -30,6 +37,7 @@ h6 { font-size: $fs-h6; }
   font-size: 1.25rem;
   line-height: 1.6;
   p { margin-bottom: 1.5rem; }
+  h1.embellish { margin-bottom: $spacer2; }
 }
 
 .pretty-links {

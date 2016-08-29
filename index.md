@@ -12,3 +12,32 @@ layout: default
 
   You can contact me [here](contact/).
 </div>
+
+---
+
+### Photos
+
+{::nomarkdown}
+<div class="grid no-gutters">
+  <div class="unit one-third">
+    <figure>
+      <img src="{{ site.baseurl }}/assets/img/profile.png">
+    </figure>
+    <p>Taken in</p>
+  </div>
+
+  <div class="unit one-third">
+    <figure>
+      <img src="{{ site.baseurl }}/assets/img/profile.png">
+    </figure>
+    <p>Taken in</p>
+  </div>
+
+  <div class="unit one-third">
+    <figure>
+      <img src="{{ site.baseurl }}/assets/img/profile.png">
+    </figure>
+    <p>Taken in</p>
+  </div>
+</div>
+{:/}

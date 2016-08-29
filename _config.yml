@@ -31,10 +31,10 @@ navigation:
     url: /
   - title: About
     url: /about/
-  - title: Projects
-    url: /projects/
-  - title: Portfolio
+  - title: Work
     url: /work/
+  - title: Portfolio
+    url: /portfolio/
   - title: Contact
     url: /contact/
 

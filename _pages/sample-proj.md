@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Project
-permalink: projects/sample-project/
+permalink: portfolio/sample-project/
 subtitle: Sample project
 ---
 

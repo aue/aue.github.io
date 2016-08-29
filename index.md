@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<div class="site-photos-spacer"></div>
+
 <div class="lead pretty-links">
   Hi! this is just a sample **intro text**. You would normally put your [full name](about/) here and say something *smart* about yourself.
 

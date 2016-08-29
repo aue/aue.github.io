@@ -34,6 +34,7 @@ $link-hover-decoration:     underline;
 
 // GLOBALS - SPACERS ------------------
 $spacer:                    1rem;
+$spacer1-4th:               $spacer/4;
 $spacer0:                   $spacer/2;
 $spacer1:                   $spacer * 1.5;
 $spacer2:                   $spacer * 2;
@@ -75,6 +76,8 @@ $fs-md-h6:                  .8rem;
 
 // RESPONSIVE ====================================
 
+$site-header-width:         17rem;
+
 $mq-breakpoints: (
   xs: 0,
   sm: 480px,
@@ -86,4 +89,3 @@ $container-widths: (
   sm: 620px,
   md: 748px
 );
-

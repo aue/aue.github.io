@@ -1,43 +1,71 @@
 .site {
+}
+
+.site-content {
+  padding: $spacer2;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 $spacer;
   @include make-container();
 }
 
 // RESPONSIVE SITE
-@include mq-up(sm) {
+@include mq-up(md) {
   .site {
-    padding: 0 $spacer2;
+    padding-left: $site-header-width;
   }
 }
 
 // SITE HEADER ====================================
 
 .site-header {
-  margin: $spacer4 0 $spacer1;
+  position: relative;
   @include clearfix();
 }
 
-.site-logo {
-  width: 3rem;
-  height: 3rem;
+.site-sidebar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacer2;
+  overflow: auto;
 }
 
-.site-nav {
-  display: flex;
-  justify-content: center;
-  font-family: "Lato", serif;
-  font-size: 1.1rem;
+.site-logo {
+  margin-bottom: $spacer1;
 }
 
 .site-title {
   text-align: center;
+  display: block;
+  margin-bottom: $spacer1;
+
+  a {color: $body-color;}
+  em {display: block;}
+  .name {
+    display: block;
+    font-size: 1.5rem;
+    font-family: $font-heading;
+    background: $body-color;
+    color: $body-bg;
+    display: inline-block;
+    padding: 0.35em;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: $spacer0;
+  }
+}
+
+.site-nav {
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .site-nav a {
-  flex: 0 1 auto;
+  display: inline-block;
   padding: 0 .25rem;
+  margin-left: $spacer0;
   margin-right: $spacer0;
   transition: background 0.1s ease-out;
 
@@ -59,57 +87,124 @@
   }
 }
 
+.site-header .photo, .site-header .faux-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  box-shadow: 0 0 $spacer2 rgba(71, 71, 71, 0.2);
+}
+
+.site-header .faux-photo {
+  display: none;
+}
+
+.site-header .photo {
+  z-index: -1;
+  overflow: hidden;
+}
+
+.site-photos-spacer {
+  display: none;
+}
+
+.site-header .photo .inner-photo {
+  width: 100%;
+  height: 100%;
+  //background: url('img/background.jpg');
+  background: linear-gradient(to bottom right, #8EB897, #C3E8BD);
+  background-size: cover;
+  background-position: center left;
+  transition: 2s ease all;
+}
+
 // SITE HEADER - RESPONSIVE ------------------
 
 @include mq-up(sm) {
   .site-header {
-    margin: $spacer4 0 $spacer2;
   }
 
   .site-title {
-    margin-bottom: $spacer1;
+    margin-bottom: $spacer2;
   }
 
   .site-nav a {
-    margin-right: $spacer1;
   }
 }
 
 @include mq-up(md) {
-  .site-logo {
-    margin-left: $spacer0;
-    width: 3.5rem;
-    height: 3.5rem;
+  .site-header {
+    position: fixed;
+    height: 100vh;
+    width: $site-header-width;
   }
 
   .site-nav {
-    float: right;
-    width: 80%;
-    margin-top: $spacer0;
-    justify-content: space-around;
     font-size: 1.25rem;
 
     a {
+      display: block;
+      margin-left: 0;
       margin-right: 0;
+      margin-top: $spacer0;
       padding: .25rem $spacer0;
     }
   }
 
-  .site-title {
-    float: left;
-    width: 20%;
-    text-align: inherit;
-    margin-bottom: $spacer0;
+  .site-header .photo, .site-header .faux-photo {
+    right: auto;
+    width: $site-header-width;
+  }
+
+  .site-header.home .photo, .site-header.home .faux-photo {
+    display: block;
+    top: $spacer2;
+    left: $site-header-width;
+    bottom: $spacer2;
+    width: calc(100vw - #{$site-header-width + $spacer2});
+  }
+
+  @keyframes kenburns {
+    0% {opacity: 0;}
+    5% {opacity: 1;}
+    95% {
+      transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
+      animation-timing-function: linear;
+      opacity: 1;
+    }
+    100% {
+      transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
+      opacity: 0;
+    }
+  }
+
+  .site-header .photo.ken-burns .inner-photo {
+    width: 110%;
+    height: 110%;
+    animation: kenburns 20s infinite;
+    transition: none;
+  }
+
+  .site-header .faux-photo.one {z-index: -2; background-color: #AD343E;}
+  .site-header .faux-photo.two {z-index: -3; background-color: #5EB1BF;}
+
+  .site-photos-spacer {
+    height: 100vh;
+    display: block;
   }
 }
 
 // SITE FOOTER ====================================
 
 .site-footer {
-  margin: 4rem 0 6rem;
+  text-align: center;
+  margin: $spacer2 0 $spacer0;
   padding-top: $spacer1;
   font-family: $font-heading;
   border-top: 1px solid $brand-light-color;
+  @include clearfix();
 }
 
 .site-footer {
@@ -133,35 +228,29 @@
   margin-left: $spacer0;
 }
 
-.site-source a {
-  color: $gray;
-}
-
-.site-links {
-  @include clearfix();
-}
-
-.site-contact li,
-.site-source li {
-
+.site-links li {
   &:not(:last-child)::after {
     content: '|';
     color: $brand-light-color;
-    margin: 0 .3rem 0 $spacer0;
+    margin: 0 $spacer1-4th 0 $spacer0;
   }
 }
 
 // SITE FOOTER - RESPONSIVE ------------------
 @include mq-up(sm) {
-  .site-contact {
+  .site-footer {
+    text-align: left;
+  }
+
+  .site-copy {
+    float: left;
+    width: 50%;
+  }
+
+  .site-links {
     float: right;
     width: 50%;
     text-align: right;
-  }
-
-  .site-source {
-    float: left;
-    width: 50%;
   }
 }
 

@@ -3,6 +3,14 @@
 .page-header,
 .post-header {
   margin-bottom: $spacer;
+  text-align: center;
+
+  .page-title, .post-title {
+    background: $body-color;
+    color: $body-bg;
+    display: inline-block;
+    padding: 0.25em;
+  }
 }
 
 .post-content,
@@ -93,7 +101,7 @@
   display: block;
   font-family: $font-heading;
   color: $text-muted;
-  margin: -$spacer0 0 $spacer;
+  margin: $spacer0 0 $spacer;
   font-size: .875rem;
 }
 

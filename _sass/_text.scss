@@ -33,6 +33,9 @@ h6 { font-size: $fs-h6; }
 }
 
 // TEXT - UTILS ------------------
+.align-left { float: left; }
+.align-right { float: right; }
+
 .lead {
   font-size: 1.25rem;
   line-height: 1.6;

@@ -10,7 +10,7 @@ permalink: /about/
 
 {::nomarkdown}
 <figure class="site-profile">
-    <img src="{{ site.baseurl }}/assets/img/profile.png">
+  <img src="{{ site.baseurl }}/assets/img/profile.png">
 </figure>
 {:/}
 
@@ -23,12 +23,12 @@ permalink: /about/
 
 I am currently attending the University of Florida, set to graduate in Spring of 2017.
 
-<div class="grid no-gutters">
-<div class="unit one-fifth">
-<img src="{{ site.baseurl }}/assets/img/profile.png">
-</div>
+<div class="grid no-gutters infobox">
+<div class="unit four-fifths">
+{::nomarkdown}
+<img src="{{ site.baseurl }}/assets/img/about/uf-logo.png" class="infobox-image">
+{:/}
 
-<div class="unit three-fifths">
 **University of Florida**  
 Computer Engineering, B.S.  
 Sales Engineering Minor
@@ -61,19 +61,19 @@ Gainesville, FL
 - Digital Design
 - Signals and Systems
 
-#### Minor
+#### Business
 - Introduction to Financial Accounting
 - Strategic Selling
 - Principles of Marketing
 
 ## Experience
 
-<div class="grid no-gutters">
-<div class="unit one-fifth">
-<img src="{{ site.baseurl }}/assets/img/profile.png">
-</div>
+<div class="grid no-gutters infobox">
+<div class="unit four-fifths">
+{::nomarkdown}
+<img src="{{ site.baseurl }}/assets/img/about/ippd-logo.png" class="infobox-image">
+{:/}  
 
-<div class="unit three-fifths">
 **UF IPPD Program with Info Tech**  
 Software Engineer
 </div>
@@ -84,42 +84,31 @@ Gainesville, FL
 </div>
 </div>
 
-- Worked with a team building internal digital dashboards displaying statistics on product usage and call center
-metrics, generated from incoming raw data
-- Created front-end and user interface of dashboards that update in near real-time and responsive to any screen size
-(React, Socket.io, Node.js Bootstrap, LESS, JS, HTML, and CSS)
-- Integrated AWS services to process incoming raw data, store records, and host the product, at low operating cost
-(Lambda, DynamoDB, Elastic Beanstalk)
+I worked with a team building a internal digital dashboard solution as part of my university's *Integrated Product and Process Design* program. These dashboards display statistics on product usage and call center
+metrics. You can read more about it [here](/work/stratustream/).
 
 ### Other
 
-<div class="grid no-gutters">
-<div class="unit one-fifth">
-<img src="{{ site.baseurl }}/assets/img/profile.png">
+<div class="infobox">
+{::nomarkdown}
+<img src="{{ site.baseurl }}/assets/img/about/acse-logo.png" class="infobox-image">
+{:/}
+**UF Association of Cuban Student Engineers**  
+Vice President of Marketing <span class="align-right">*2015 - 2016*</span>  
+Secretary <span class="align-right">*2014 - 2015*</span>
 </div>
 
-<div class="unit four-fifths">
-**[UF Association of Cuban Student Engineers](https://ufl.collegiatelink.net/organization/CubanEngineers)**  
-Member since 2014  
-Vice President of Marketing *2015 - 2016*  
-Secretary *2014 - 2015*
-</div>
-</div>
-
-<div class="grid no-gutters">
-<div class="unit one-fifth">
-<img src="{{ site.baseurl }}/assets/img/profile.png">
-</div>
-
-<div class="unit four-fifths">
+<div class="infobox">
+{::nomarkdown}
+<img src="{{ site.baseurl }}/assets/img/about/csio-logo.png" class="infobox-image">
+{:/}
 **UF Chi Sigma IO (ΧΣΙO)**  
-Treasurer *2014 - 2015*
-</div>
+Treasurer <span class="align-right">*2014 - 2015*</span>
 </div>
 
 ## Skills
 
-This is what I have experience in and have worked with before. You can see what I have made with these in my [work](/work/) and [portfolio](/portfolio/).
+This is what I have experience in and have worked with before, but I'm always looking to add more! You can see what I have made with these in my [work](/work/) and [portfolio](/portfolio/).
 
 **Languages:** JavaScript, HTML, CSS • C++
 

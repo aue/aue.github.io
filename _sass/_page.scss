@@ -181,10 +181,43 @@ p.post-desc {
   margin: -.4rem 1rem 0 $spacer;
 }
 
+.infobox {
+  @include clearfix();
+
+  .infobox-image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    float: left;
+    margin-right: $spacer1;
+    margin-bottom: $spacer1;
+  }
+
+  .one-fifth {
+    font-style: italic;
+  }
+}
+
+@include mq-down(md) {
+  .infobox {
+    .align-left, .align-right {float: none;}
+
+    .one-fifth {
+      margin-left: 5rem + $spacer1;
+    }
+  }
+}
+
 @include mq-up(md) {
   .site-profile {
     width: 144px;
     height: 144px;
     margin: -1.2rem 1rem 0 2rem;
+  }
+
+  .infobox {
+    .one-fifth {
+      text-align: right;
+    }
   }
 }

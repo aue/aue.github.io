@@ -14,6 +14,23 @@
   outline-offset: -2px;
 }
 
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 // MEDIA QUERIES (MQ) ====================================
 
 // MQ - HELPERS ------------------
@@ -117,4 +134,11 @@
     color: $color-bg;
     text-decoration: none;
   }
+}
+
+@mixin embellish () {
+  background: $body-color;
+  color: $body-bg;
+  display: inline-block;
+  padding: 0.35em 0.25em 0.25em;
 }

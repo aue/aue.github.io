@@ -9,10 +9,7 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 
   &.embellish {
-    background: $body-color;
-    color: $body-bg;
-    display: inline-block;
-    padding: 0.25em;
+    @include embellish();
   }
 }
 

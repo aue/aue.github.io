@@ -102,7 +102,7 @@ Secretary <span class="align-right">*2014 - 2015*</span>
 {::nomarkdown}
 <img src="{{ site.baseurl }}/assets/img/about/csio-logo.png" class="infobox-image">
 {:/}
-**UF Chi Sigma IO (ΧΣΙO)**  
+**UF Chi Sigma IO (ΧΣΙΟ)**  
 Treasurer <span class="align-right">*2014 - 2015*</span>
 </div>
 

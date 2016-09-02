@@ -1,15 +1,20 @@
 // PAGE COMMON ====================================
 
+.pswp__img {
+  background-color: #fff;
+}
+
+.pswp {
+  font-family: $font-heading;
+}
+
 .page-header,
 .post-header {
   margin-bottom: $spacer;
   text-align: center;
 
   .page-title, .post-title {
-    background: $body-color;
-    color: $body-bg;
-    display: inline-block;
-    padding: 0.25em;
+    @include embellish();
   }
 }
 
@@ -138,7 +143,6 @@ p.post-desc {
 // PAGE WORK & PROJECTS ====================================
 
 .project {
-  margin-right: $spacer;
   font-size: 1rem;
 }
 
@@ -158,12 +162,84 @@ p.post-desc {
   }
 }
 
+.project-image {
+  margin-bottom: $spacer1;
+}
+
 @include mq-up(md) {
   .projects {
-    margin-top: $spacer2;
+  }
+
+  .project {
   }
 
   .project-title {
+    margin-bottom: $spacer2;
+  }
+}
+
+// PORTFOLIO ====================================
+
+.portfolio {
+  font-size: 1rem;
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.portfolio-page picture {
+  text-align: center;
+
+  & > img {
+    background: #fff;
+    box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
+    margin-bottom: $spacer2;
+  }
+
+  &:last-of-type > img {
+    margin-bottom: 0;
+  }
+}
+
+.portfolio-title {
+  margin-bottom: $spacer1;
+
+  a {
+    font-weight: bold;
+    border-bottom: 5px solid $brand-light-color;
+    padding-bottom: $spacer0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-bottom-color: $brand-color;
+    }
+  }
+}
+
+.portfolio-item figure, .portfolio-item picture > img, .portfolio-video {
+  background: #fff;
+  box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
+  margin-bottom: $spacer;
+  width: 100%;
+}
+
+.portfolio-item picture[data-index], .portfolio picture[data-index]  {
+  cursor: pointer;
+}
+
+.portfolio-video {
+  @include aspect-ratio(600, 350);
+}
+
+@include mq-up(md) {
+  .portfolio {
+    margin-top: $spacer2;
+  }
+
+  .portfolio {
+  }
+
+  .portfolio-title {
     margin-bottom: $spacer2;
   }
 }

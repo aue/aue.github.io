@@ -12,9 +12,6 @@ permalink: /:year/:title/   # how should we display posts url
 # Meta settings
 email: hello@abrahamyuen.com
 author: Abraham Yuen
-twitter_username: clenemt
-github_username: clenemt
-github_source: jackal
 
 # Put your ga tracking code below
 google_analytics: 'UA-47258938-1'
@@ -60,5 +57,6 @@ include:
 exclude:
   - README.md
   - vendor
+  - feed.xml
 gems:
   - jekyll-paginate

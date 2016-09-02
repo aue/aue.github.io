@@ -44,19 +44,17 @@
   display: block;
   margin-bottom: $spacer1;
 
-  a {color: $body-color;}
+  a {color: $body-color; text-decoration: none;}
   em {display: block;}
   .name {
-    display: block;
     font-size: 1.5rem;
     font-family: $font-heading;
-    background: $body-color;
-    color: $body-bg;
     display: inline-block;
-    padding: 0.35em;
     font-weight: bold;
     line-height: 1;
     margin-top: $spacer0;
+    @include embellish();
+    padding: 0.35em 0.35em 0.2em;
   }
 }
 
@@ -68,26 +66,32 @@
 
 .site-nav a {
   display: inline-block;
-  padding: 0 .25rem;
   margin-left: $spacer0;
   margin-right: $spacer0;
-  transition: background 0.1s ease-out;
+  color: lighten($body-color, 5%);
 
   &:hover {
     text-decoration: none;
     color: $link-color;
-    background-color: $brand-light-color;
   }
 
   &:focus,
   &:active {
-    background-color: $link-color;
-    text-decoration: none;
-    color: #fff;
+    span {
+      background-color: $link-color; //$body-color
+      text-decoration: none;
+      color: $body-bg;
+      transition: 0.2s linear all;
+    }
   }
 
   &.current {
     font-weight: bold;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0.35em 0.35em 0.2em;
   }
 }
 
@@ -108,6 +112,7 @@
 .site-header .photo {
   z-index: -1;
   overflow: hidden;
+  background-color: #2c8cfd;
 }
 
 .site-photos-spacer {
@@ -117,11 +122,10 @@
 .site-header .photo .inner-photo {
   width: 100%;
   height: 100%;
-  //background: url('img/background.jpg');
-  background: linear-gradient(to bottom right, #8EB897, #C3E8BD);
+  background-image: url('../img/background_600.jpg');
   background-size: cover;
   background-position: center left;
-  transition: 2s ease all;
+  //transition: 2s ease all;
 }
 
 // SITE HEADER - RESPONSIVE ------------------
@@ -153,7 +157,6 @@
       margin-left: 0;
       margin-right: 0;
       margin-top: $spacer0;
-      padding: .25rem $spacer0;
     }
   }
 
@@ -191,8 +194,8 @@
     transition: none;
   }
 
-  .site-header .faux-photo.one {z-index: -2; background-color: #AD343E;}
-  .site-header .faux-photo.two {z-index: -3; background-color: #5EB1BF;}
+  .site-header .faux-photo.one {z-index: -2; background-color: $theme0;}
+  .site-header .faux-photo.two {z-index: -3; background-color: $theme1;}
 
   .site-photos-spacer {
     height: 100vh;

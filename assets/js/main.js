@@ -18,7 +18,7 @@
     // build scene and set duration to window height
     var scene = new ScrollMagic.Scene({offset: 50, duration: '75%'})
     	.setTween(tl)
-    	.on('end', function(event) {
+    	.on('start', function(event) {
     		var photo = document.querySelector('header .photo');
     		if (event.scrollDirection === 'REVERSE') photo.classList.add('ken-burns');
     		else photo.classList.remove('ken-burns');
@@ -26,4 +26,86 @@
     	.addIndicators() // add indicators (requires plugin)
     	.addTo(controller);
   }
+
+  var photoSwipeGalleryArray = null;
+
+  var initPhotoSwipe = function() {
+    var galleryItems = document.querySelectorAll('.portfolio picture, .portfolio-page picture');
+    var index = 0;
+
+    for (var i = 0; i < galleryItems.length; i++) {
+      // set onclick if not link
+      var parentTag = galleryItems[i].parentNode;
+      if (parentTag.tagName.toLowerCase() === 'a') {
+        // disable if link is to image
+        if (parentTag.hasAttribute('data-image')) {
+          parentTag.onclick = function() {
+            return false;
+          };
+        }
+        else continue;
+      }
+
+      // set index for reuse
+      galleryItems[i].setAttribute('data-index', index);
+      galleryItems[i].onclick = function(index) {
+        return function() {
+          openPhotoSwipe(index);
+        };
+      }(i);
+
+      index++;
+    }
+  }
+
+  var openPhotoSwipe = function(index) {
+    if (photoSwipeGalleryArray === null) createPhotoSwipe();
+
+    var options = {
+      history: false,
+      bgOpacity: 0.75,
+      loop: false,
+      shareEl: false,
+      index: index
+    };
+
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photoSwipeGalleryArray, options);
+    gallery.init();
+  }
+
+  var createPhotoSwipe = function() {
+    var items = [];
+    var galleryItems = document.querySelectorAll('.portfolio picture[data-index], .portfolio-page picture[data-index]');
+
+    for (var i = 0; i < galleryItems.length; i++) {
+      var url,
+          parentTag = galleryItems[i].parentNode,
+          imageTag = galleryItems[i].querySelector('img'),
+          sourceTag = galleryItems[i].querySelector('source'),
+          width = 600 * 2,
+          height = 350 * 2;
+
+      // find best image to use
+      if (parentTag.tagName.toLowerCase() === 'a' && parentTag.hasAttribute('data-image')) {
+        url = parentTag.href;
+        width = parentTag.getAttribute('data-image-width');
+        height = parentTag.getAttribute('data-image-height');
+      }
+      else if (sourceTag && typeof SVGRect !== 'undefined' && sourceTag.getAttribute('type') == 'image/svg+xml') url = sourceTag.getAttribute('srcset');
+      else if (sourceTag) url = sourceTag.getAttribute('srcset').split(' ')[0];
+      else url = imageTag.src;
+
+      items.push({
+        src: url,
+        w: width,
+        h: height
+      });
+    }
+
+    photoSwipeGalleryArray = items;
+  }
+
+  // activate gallery
+  if (document.querySelector('.portfolio, .portfolio-page')) initPhotoSwipe();
 }());

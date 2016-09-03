@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: portfolio-page
 title: Project
 permalink: portfolio/bettergaia-site/
 subtitle: BetterGaia Site

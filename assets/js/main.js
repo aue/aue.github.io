@@ -52,7 +52,7 @@
         return function() {
           openPhotoSwipe(index);
         };
-      }(i);
+      }(index);
 
       index++;
     }
@@ -75,6 +75,7 @@
   }
 
   var createPhotoSwipe = function() {
+    // generate array to use in PhotoSwipe
     var items = [];
     var galleryItems = document.querySelectorAll('.portfolio picture[data-index], .portfolio-page picture[data-index]');
 
@@ -86,6 +87,10 @@
           width = 600 * 2,
           height = 350 * 2;
 
+      // get dimensions of image
+      width = imageTag.naturalWidth;
+      height = imageTag.naturalHeight;
+
       // find best image to use
       if (parentTag.tagName.toLowerCase() === 'a' && parentTag.hasAttribute('data-image')) {
         url = parentTag.href;
@@ -96,6 +101,20 @@
       else if (sourceTag) url = sourceTag.getAttribute('srcset').split(' ')[0];
       else url = imageTag.src;
 
+      // calc best zoomed in dimensions
+      var ratio = height / width;
+      var windowW = window.innerWidth;
+      var windowH = window.innerHeight;
+
+      if (width <= height) {
+        width = windowW;
+        height = windowW * ratio;
+      }
+      else {
+        width = windowH / ratio;
+        height = windowH;
+      }
+
       items.push({
         src: url,
         w: width,
@@ -104,8 +123,53 @@
     }
 
     photoSwipeGalleryArray = items;
+
+    // debounce code
+    var _now = Date.now || function() {
+      return new Date().getTime();
+    };
+
+    var _debounce = function(func, wait, immediate) {
+      var timeout, args, context, timestamp, result;
+
+      var later = function() {
+        var last = _now() - timestamp;
+
+        if (last < wait && last >= 0) {
+          timeout = setTimeout(later, wait - last);
+        } else {
+          timeout = null;
+          if (!immediate) {
+            result = func.apply(context, args);
+            if (!timeout) context = args = null;
+          }
+        }
+      };
+
+      return function() {
+        context = this;
+        args = arguments;
+        timestamp = _now();
+        var callNow = immediate && !timeout;
+        if (!timeout) timeout = setTimeout(later, wait);
+        if (callNow) {
+          result = func.apply(context, args);
+          context = args = null;
+        }
+
+        return result;
+      };
+    };
+
+    // generate new dimensions if window resized
+    $(window).on('resize', function() {
+      _debounce(function() {
+    		photoSwipeGalleryArray = null;
+    	}, 250);
+  	});
   }
 
   // activate gallery
   if (document.querySelector('.portfolio, .portfolio-page')) initPhotoSwipe();
+
 }());

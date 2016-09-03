@@ -8,13 +8,14 @@ permalink: /about/
 
 <div class="pretty-links">
 
+<div class="lead lead-about">
 {::nomarkdown}
 <figure class="site-profile">
-  <img src="{{ site.baseurl }}/assets/img/profile.png">
+  <img src="{{ site.baseurl }}/assets/img/profile.jpg">
 </figure>
 {:/}
 
-<div class="lead lead-about">My name is Abraham Yuen. I like creating, designing, developing, programming— and so much more.
+My name is Abraham Yuen. I like creating, designing, developing, programming— and so much more.
 </div>
 
 ---

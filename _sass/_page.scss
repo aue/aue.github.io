@@ -223,7 +223,7 @@ p.post-desc {
   width: 100%;
 }
 
-.portfolio-item picture[data-index], .portfolio picture[data-index]  {
+.portfolio-item picture[data-index], .portfolio-page picture[data-index]  {
   cursor: pointer;
 }
 
@@ -252,9 +252,13 @@ p.post-desc {
 
 .site-profile {
   float: right;
-  width: 96px;
-  height: 96px;
-  margin: -.4rem 1rem 0 $spacer;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin-left: $spacer;
+
+  img {
+    border-radius: 7.5rem;
+  }
 }
 
 .infobox {
@@ -285,15 +289,15 @@ p.post-desc {
 }
 
 @include mq-up(md) {
-  .site-profile {
-    width: 144px;
-    height: 144px;
-    margin: -1.2rem 1rem 0 2rem;
-  }
-
   .infobox {
     .one-fifth {
       text-align: right;
     }
+  }
+}
+
+@include mq-up(lg) {
+  .site-profile {
+    margin-top: -$spacer;
   }
 }

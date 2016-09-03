@@ -77,6 +77,8 @@
 
   &:focus,
   &:active {
+    text-shadow: none !important;
+
     span {
       background-color: $link-color; //$body-color
       text-decoration: none;
@@ -130,15 +132,16 @@
 
 // SITE HEADER - RESPONSIVE ------------------
 
-@include mq-up(sm) {
-  .site-header {
+@include mq-down(sm) {
+  .site-nav a, .site-title em {
+    text-shadow: 0 1px 0 $body-color;
+    color: $body-bg;
   }
+}
 
+@include mq-up(sm) {
   .site-title {
     margin-bottom: $spacer2;
-  }
-
-  .site-nav a {
   }
 }
 

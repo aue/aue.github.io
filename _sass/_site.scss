@@ -97,37 +97,42 @@
   }
 }
 
-.site-header .photo, .site-header .faux-photo {
+.site-photos {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
-  box-shadow: 0 0 $spacer2 rgba(71, 71, 71, 0.2);
-}
-
-.site-header .faux-photo {
-  display: none;
-}
-
-.site-header .photo {
   z-index: -1;
-  overflow: hidden;
-  background-color: #2c8cfd;
+
+  .photo, .faux-photo {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 $spacer2 rgba(71, 71, 71, 0.2);
+  }
+
+  .photo {
+    overflow: hidden;
+    background-color: #2c8cfd;
+
+    .inner-photo {
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/background_600.jpg');
+      background-size: cover;
+      background-position: center left;
+    }
+  }
+
+  .faux-photo {
+    display: none;
+  }
 }
 
 .site-photos-spacer {
   display: none;
-}
-
-.site-header .photo .inner-photo {
-  width: 100%;
-  height: 100%;
-  background-image: url('../img/background_600.jpg');
-  background-size: cover;
-  background-position: center left;
-  //transition: 2s ease all;
 }
 
 // SITE HEADER - RESPONSIVE ------------------
@@ -148,7 +153,11 @@
 @include mq-up(md) {
   .site-header {
     position: fixed;
-    height: 100vh;
+    height: 100%;
+    width: $site-header-width;
+  }
+
+  .site-sidebar {
     width: $site-header-width;
   }
 
@@ -161,19 +170,6 @@
       margin-right: 0;
       margin-top: $spacer0;
     }
-  }
-
-  .site-header .photo, .site-header .faux-photo {
-    right: auto;
-    width: $site-header-width;
-  }
-
-  .site-header.home .photo, .site-header.home .faux-photo {
-    display: block;
-    top: $spacer2;
-    left: $site-header-width;
-    bottom: $spacer2;
-    width: calc(100vw - #{$site-header-width + $spacer2});
   }
 
   @keyframes kenburns {
@@ -190,15 +186,33 @@
     }
   }
 
-  .site-header .photo.ken-burns .inner-photo {
-    width: 110%;
-    height: 110%;
-    animation: kenburns 20s infinite;
-    transition: none;
+  .site-photos {
+    .photo, .faux-photo {
+    }
   }
 
-  .site-header .faux-photo.one {z-index: -2; background-color: $theme0;}
-  .site-header .faux-photo.two {z-index: -3; background-color: $theme1;}
+  .site-header.home {
+    width: 100%;
+
+    .site-photos {
+      padding: $spacer2 $spacer2 $spacer2 $site-header-width;
+
+      .photo {
+
+
+        &.ken-burns .inner-photo {
+          width: 110%;
+          height: 110%;
+          animation: kenburns 20s infinite;
+        }
+      }
+
+      /*.faux-photo {
+        &.one {z-index: -2; background-color: $theme0;}
+        &.two {z-index: -3; background-color: $theme1;}
+      }*/
+    }
+  }
 
   .site-photos-spacer {
     height: 100vh;

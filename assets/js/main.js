@@ -8,23 +8,38 @@
     // init controller
     var controller = new ScrollMagic.Controller();
 
-    // build tween
-    var tl = new TimelineMax().add([
-    	TweenMax.to('header .photo', 0.5, {left: 0, top: 0, bottom: 0, width: '17rem', ease: Sine.easeIn}),
-    	TweenMax.to('header .faux-photo.one', 0.5, {left: '17rem', top: '2rem', bottom: '2rem', width: 0, ease: Power1.easeIn}),
-    	TweenMax.to('header .faux-photo.two', 0.51, {left: '17rem', top: '4rem', bottom: '4rem', width: 0, ease: Power1.easeIn})
-    ]);
+    var createScene = function() {
+      // build tween
+      var tl = new TimelineMax().add([
+      	TweenMax.to('.site-header.home', 0.5, {width: '17rem', ease: Sine.easeIn}),
+      	TweenMax.to('.site-header.home .site-photos', 0.5, {padding: 0, ease: Power1.easeIn}),
+      ]);
 
-    // build scene and set duration to window height
-    var scene = new ScrollMagic.Scene({offset: 50, duration: '75%'})
-    	.setTween(tl)
-    	.on('start', function(event) {
-    		var photo = document.querySelector('header .photo');
-    		if (event.scrollDirection === 'REVERSE') photo.classList.add('ken-burns');
-    		else photo.classList.remove('ken-burns');
-    	})
-    	.addIndicators() // add indicators (requires plugin)
-    	.addTo(controller);
+      // build scene and set duration to window height
+      return new ScrollMagic.Scene({offset: 50, duration: '75%'})
+      	.setTween(tl)
+      	.on('start', function(event) {
+      		var photo = document.querySelector('header .photo');
+      		if (event.scrollDirection === 'REVERSE') photo.classList.add('ken-burns');
+      		else photo.classList.remove('ken-burns');
+      	})
+      	//.addIndicators() // add indicators (requires plugin)
+      	.addTo(controller);
+    }
+
+    var scene;
+    var widthBreakpoint = 768;
+    if (window.innerWidth >= widthBreakpoint) scene = createScene();
+
+    $(window).on('resize', _.debounce(function() {
+    	scene.destroy(true);
+      document.querySelector('.site-header.home').removeAttribute('style');
+      document.querySelector('.site-header.home .site-photos').removeAttribute('style');
+    	if (window.innerWidth >= widthBreakpoint) {
+        scene = createScene();
+        controller.update();
+      }
+    }, 500));
   }
 
   var photoSwipeGalleryArray = null;
@@ -124,49 +139,10 @@
 
     photoSwipeGalleryArray = items;
 
-    // debounce code
-    var _now = Date.now || function() {
-      return new Date().getTime();
-    };
-
-    var _debounce = function(func, wait, immediate) {
-      var timeout, args, context, timestamp, result;
-
-      var later = function() {
-        var last = _now() - timestamp;
-
-        if (last < wait && last >= 0) {
-          timeout = setTimeout(later, wait - last);
-        } else {
-          timeout = null;
-          if (!immediate) {
-            result = func.apply(context, args);
-            if (!timeout) context = args = null;
-          }
-        }
-      };
-
-      return function() {
-        context = this;
-        args = arguments;
-        timestamp = _now();
-        var callNow = immediate && !timeout;
-        if (!timeout) timeout = setTimeout(later, wait);
-        if (callNow) {
-          result = func.apply(context, args);
-          context = args = null;
-        }
-
-        return result;
-      };
-    };
-
     // generate new dimensions if window resized
-    $(window).on('resize', function() {
-      _debounce(function() {
-    		photoSwipeGalleryArray = null;
-    	}, 250);
-  	});
+    $(window).on('resize', _.debounce(function() {
+    	photoSwipeGalleryArray = null;
+    }, 500));
   }
 
   // activate gallery

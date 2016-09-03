@@ -1,0 +1,16 @@
+<footer class="site-footer">
+
+  <div class="site-copy">&copy; {{ site.time | date: '%Y' }}<span class="site-author">{{ site.author }}</span></div>
+
+  <div class="site-links">
+    <ul>
+      {% if site.email %}
+      <li><a href="/contact/">Contact</a></li>
+      {% endif %}
+
+      <li><a href="#">Back to top</a></li>
+    </ul>
+  </div>
+
+</footer>
+<!-- site-footer -->

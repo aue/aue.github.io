@@ -1,0 +1,45 @@
+<header class="site-header{% if page.url == '/' %} home{% endif %}">
+
+  <div class="site-sidebar">
+    <div class="site-title">
+      <a href="{{ site.baseurl }}/" title="Home page">
+        <em>Site of</em>
+        <span href="{{ site.baseurl }}/" class="name">Abraham Yuen</span>
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      {% for link in site.navigation %}
+        {% assign current = nil %}
+        {% if page.url contains link.url %}
+          {% if page.url == link.url %}
+            {% assign current = 'class="current"' %}
+          {% elsif link.url != "/" %}
+            {% assign current = 'class="current"' %}
+          {% endif %}
+        {% endif %}
+      <a href="{{ link.url | prepend: site.baseurl }}" {{ current }} {% if link.desc %} title="{{ link.desc }}" {% endif %}>
+        <span>{{ link.title }}</span>
+      </a>
+      {% endfor %}
+    </nav>
+  </div>
+
+
+  <div class="site-photos">
+    <div class="photo">
+      <div class="inner-photo"></div>
+      <!--<picture>
+        <source srcset="assets/img/background.jpg" media="(min-width: 600px)">
+        <img src="assets/img/starbg.jpg" alt="Star">
+      </picture>-->
+    </div>
+
+    {% if page.url == '/' %}
+    <div class="faux-photo one"></div>
+    <div class="faux-photo two"></div>
+    {% endif %}
+  </div>
+
+</header>
+<!-- site-header -->

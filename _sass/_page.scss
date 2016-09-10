@@ -146,10 +146,11 @@ p.post-desc {
   font-size: 1rem;
 }
 
-.project-title {
-  margin-bottom: $spacer1;
+.page-content h3.project-title {
+  margin-top: 0;
+  margin-bottom: $spacer;
 
-  a {
+  /*a {
     font-weight: bold;
     border-bottom: 5px solid $brand-light-color;
     padding-bottom: $spacer0;
@@ -159,21 +160,17 @@ p.post-desc {
       text-decoration: none;
       border-bottom-color: $brand-color;
     }
-  }
+  }*/
 }
 
 .project-image {
   margin-bottom: $spacer1;
+  background: #fff;
+  box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
 }
 
 @include mq-up(md) {
-  .projects {
-  }
-
-  .project {
-  }
-
-  .project-title {
+  .page-content h3.project-title {
     margin-bottom: $spacer2;
   }
 }
@@ -184,20 +181,6 @@ p.post-desc {
   font-size: 1rem;
   margin-top: $spacer;
   margin-bottom: $spacer;
-}
-
-.portfolio-page picture {
-  text-align: center;
-
-  & > img {
-    background: #fff;
-    box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
-    margin-bottom: $spacer2;
-  }
-
-  &:last-of-type > img {
-    margin-bottom: 0;
-  }
 }
 
 .portfolio-title {
@@ -216,19 +199,18 @@ p.post-desc {
   }
 }
 
-.portfolio-item figure, .portfolio-item picture > img, .portfolio-video {
-  background: #fff;
-  box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
-  margin-bottom: $spacer;
-  width: 100%;
+.portfolio-item {
+  .portfolio-video, .portfolio-photo {
+    @include aspect-ratio(600, 350);
+    background: #fff;
+    box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
+    margin-bottom: $spacer;
+    width: 100%;
+  }
 }
 
 .portfolio-item picture[data-index], .portfolio-page picture[data-index]  {
   cursor: pointer;
-}
-
-.portfolio-video {
-  @include aspect-ratio(600, 350);
 }
 
 @include mq-up(md) {
@@ -236,11 +218,36 @@ p.post-desc {
     margin-top: $spacer2;
   }
 
-  .portfolio {
-  }
-
   .portfolio-title {
     margin-bottom: $spacer2;
+  }
+}
+
+// PORTFOLIO PAGE ===============================
+.portfolio-page {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.portfolio-page picture {
+  text-align: center;
+
+  & > img {
+    background: #fff;
+    box-shadow: 0 0 $spacer rgba(70,70,70,0.1);
+    margin-bottom: $spacer2;
+  }
+
+  &:last-of-type > img {
+    margin-bottom: 0;
+  }
+
+  + p {
+    margin-top: $spacer;
+  }
+
+  ~ p {
+    text-align: left;
   }
 }
 

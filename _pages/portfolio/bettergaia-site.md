@@ -1,6 +1,6 @@
 ---
 layout: portfolio-page
-title: Project
+title: BetterGaia Site
 permalink: portfolio/bettergaia-site/
 subtitle: BetterGaia Site
 ---

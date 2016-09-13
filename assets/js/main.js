@@ -3,7 +3,7 @@
 
   // Homepage Photo Intro
   if (document.location.pathname === '/') {
-    document.querySelector('header .photo').classList.add('ken-burns');
+    $('header .photo').addClass('ken-burns');
 
     // init controller
     var controller = new ScrollMagic.Controller();
@@ -19,9 +19,9 @@
       return new ScrollMagic.Scene({offset: 50, duration: '75%'})
       	.setTween(tl)
       	.on('start', function(event) {
-      		var photo = document.querySelector('header .photo');
-      		if (event.scrollDirection === 'REVERSE') photo.classList.add('ken-burns');
-      		else photo.classList.remove('ken-burns');
+      		var photo = $('header .photo');
+      		if (event.scrollDirection === 'REVERSE') photo.addClass('ken-burns');
+      		else photo.removeClass('ken-burns');
       	})
       	//.addIndicators() // add indicators (requires plugin)
       	.addTo(controller);

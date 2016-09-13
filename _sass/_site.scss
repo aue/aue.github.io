@@ -69,6 +69,7 @@
   margin-left: $spacer0;
   margin-right: $spacer0;
   color: lighten($body-color, 5%);
+  outline: none;
 
   &:hover {
     text-decoration: none;
@@ -150,8 +151,23 @@
   }
 }
 
+@keyframes kenburns {
+  0% {opacity: 0;}
+  5% {opacity: 1;}
+  95% {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
+    opacity: 0;
+  }
+}
+
 @include mq-up(md) {
   .site-header {
+    z-index: 1;
     position: fixed;
     height: 100%;
     width: $site-header-width;
@@ -172,25 +188,6 @@
     }
   }
 
-  @keyframes kenburns {
-    0% {opacity: 0;}
-    5% {opacity: 1;}
-    95% {
-      transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
-      animation-timing-function: linear;
-      opacity: 1;
-    }
-    100% {
-      transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
-      opacity: 0;
-    }
-  }
-
-  .site-photos {
-    .photo, .faux-photo {
-    }
-  }
-
   .site-header.home {
     width: 100%;
 
@@ -198,8 +195,6 @@
       padding: $spacer2 $spacer2 $spacer2 $site-header-width;
 
       .photo {
-
-
         &.ken-burns .inner-photo {
           width: 110%;
           height: 110%;

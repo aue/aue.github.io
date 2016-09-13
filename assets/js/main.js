@@ -103,8 +103,8 @@
           height = 350 * 2;
 
       // get dimensions of image
-      width = imageTag.naturalWidth;
-      height = imageTag.naturalHeight;
+      width = (imageTag.naturalWidth > 0)? imageTag.naturalWidth : imageTag.width;
+      height = (imageTag.naturalHeight > 0)? imageTag.naturalHeight : imageTag.height;
 
       // find best image to use
       if (parentTag.tagName.toLowerCase() === 'a' && parentTag.hasAttribute('data-image')) {

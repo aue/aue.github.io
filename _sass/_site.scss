@@ -213,7 +213,7 @@
           .inner-photo {
             width: 110%;
             height: 110%;
-            animation: kenburns 20s infinite;
+            animation: kenburns 17s infinite;
           }
 
           .progress {
@@ -226,12 +226,13 @@
             right: 0;
 
             &:hover ~ .inner-photo, &:hover .bar {animation-play-state: paused;}
+            &:hover .bar {opacity: 0; transition: 0.5s ease opacity;}
 
             .bar {
               background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25));
               width: 0%;
               height: 100%;
-              animation: progress 20s infinite;
+              animation: progress 17s infinite;
               box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
             }
           }

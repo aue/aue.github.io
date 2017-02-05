@@ -5,6 +5,15 @@
   if (document.location.pathname === '/') {
     $('header .photo').addClass('ken-burns');
 
+    // go through photos
+    $('header .photo').on('animationiteration', function() {
+      var currentPhoto = $(this).attr('data-active-photo');
+      var photos = ['one', 'two', 'three'];
+      var nextPhoto = photos.indexOf(currentPhoto) + 1;
+      if (nextPhoto > photos.length - 1) nextPhoto = 0;
+      $(this).attr('data-active-photo', photos[nextPhoto]);
+    });
+
     // init controller
     var controller = new ScrollMagic.Controller();
 

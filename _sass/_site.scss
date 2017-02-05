@@ -45,7 +45,7 @@
   margin-bottom: $spacer1;
 
   a {color: $body-color; text-decoration: none;}
-  em {display: block;}
+  em {display: block; text-shadow: 0 1px 0 rgba(255,255,255,0.25);}
   .name {
     font-size: 1.5rem;
     font-family: $font-heading;
@@ -70,6 +70,7 @@
   margin-left: $spacer0;
   margin-right: $spacer0;
   color: lighten($body-color, 5%);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
   outline: none;
 
   &:hover {
@@ -107,25 +108,33 @@
   left: 0;
   z-index: -1;
 
-  .photo, .faux-photo {
+  .photo {
     display: block;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    position: relative;
     box-shadow: 0 0 $spacer2 rgba(71, 71, 71, 0.2);
-  }
+    background: $header-bg;
 
-  .photo {
-    overflow: hidden;
-    background-color: #2c8cfd;
+    // Backgrounds
+    &[data-active-photo="one"] {background: linear-gradient(to bottom, #3a8efe, #3a92fe, #9cd0fe) #2c8cfd;}
+    &[data-active-photo="two"] {background: linear-gradient(to bottom, #25241f, #6c6d6f) #535457;}
+    &[data-active-photo="three"] {background: #eefcff;}
 
     .inner-photo {
       width: 100%;
       height: 100%;
-      background-image: url('../img/background_600.jpg');
       background-size: cover;
       background-position: center left;
+      display: none;
+
+      &.one {background-image: url('../img/one.jpg');}
+      &.two {background-image: url('../img/two.jpg');}
+      &.three {background-image: url('../img/three.jpg');}
     }
+
+    &[data-active-photo="one"] .inner-photo.one, &[data-active-photo="two"] .inner-photo.two, &[data-active-photo="three"] .inner-photo.three {display: block;}
   }
 
   .faux-photo {
@@ -153,17 +162,21 @@
 }
 
 @keyframes kenburns {
-  0% {opacity: 0;}
+  0% {opacity: 0; animation-timing-function: ease;}
   5% {opacity: 1;}
   95% {
     transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
-    animation-timing-function: linear;
     opacity: 1;
   }
   100% {
     transform: scale3d(1.1, 1.1, 1.1) translate3d(-10%, -10%, 0rem);
     opacity: 0;
   }
+}
+
+@keyframes progress {
+  0% {width: 0; animation-timing-function: linear;}
+  100% {width: 100%;}
 }
 
 @include mq-up(md) {
@@ -196,10 +209,32 @@
       padding: $spacer2 $spacer2 $spacer2 $site-header-width;
 
       .photo {
-        &.ken-burns .inner-photo {
-          width: 110%;
-          height: 110%;
-          animation: kenburns 20s infinite;
+        &.ken-burns {
+          .inner-photo {
+            width: 110%;
+            height: 110%;
+            animation: kenburns 20s infinite;
+          }
+
+          .progress {
+            height: 2rem;
+            padding-top: 1.5rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            &:hover ~ .inner-photo, &:hover .bar {animation-play-state: paused;}
+
+            .bar {
+              background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25));
+              width: 0%;
+              height: 100%;
+              animation: progress 20s infinite;
+              box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+            }
+          }
         }
       }
 

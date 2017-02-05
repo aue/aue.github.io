@@ -24,9 +24,9 @@ $brand-secondary:           $gray-dark;
 $text-muted:                $gray-light;
 
 // GLOBALS  ====================================
-
 $body-bg:                   $gray-lightest;
 $body-color:                $gray-dark;
+$header-bg:                 darken($body-bg, 20%);
 
 // GLOBALS - LINKS ------------------
 $link-color:                $brand-color;

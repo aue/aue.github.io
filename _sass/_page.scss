@@ -285,6 +285,14 @@ p.post-desc {
   }
 }
 
+@include mq-down(sm) {
+  .infobox {
+    .unit.one-fifth {
+      width: auto !important;
+    }
+  }
+}
+
 @include mq-down(md) {
   .infobox {
     .align-left, .align-right {float: none;}

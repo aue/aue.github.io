@@ -20,9 +20,19 @@ My name is Abraham Yuen. I like creating, designing, developing, programming— 
 
 ---
 
+## Skills
+
+This is what I have experience in and have worked with before, but I'm always looking to add more! You can see what I have made with these in my [work](/work/) and [portfolio](/portfolio/).
+
+**Languages:** JavaScript, HTML, CSS • C/C++
+
+**Software:** Adobe Creative Cloud: Photoshop, Illustrator, Experience Design, Premiere Pro • Final Cut Pro • InVision
+
+**Libraries & Frameworks:** React, jQuery, Node.js, Socket.io • Bootstrap, SASS/LESS • Amazon Web Services (EC2, DynamoDB, Lambda, Elastic Beanstalk)
+
 ## Education
 
-I am currently attending the University of Florida, set to graduate in Spring of 2017.
+I am currently attending the University of Florida, set to graduate in May of 2017.
 
 <div class="grid no-gutters infobox">
 <div class="unit four-fifths">
@@ -36,7 +46,7 @@ Sales Engineering Minor
 </div>
 
 <div class="unit one-fifth">
-2012 - 2017  
+May 2017  
 Gainesville, FL
 </div>
 </div>
@@ -53,7 +63,8 @@ Gainesville, FL
 - User Experience and Design
 - Artificial Intelligence for Computer Games
 - Web App Development
-- Brain Computer Interfaces
+- Brain-Computer Interfaces
+- Affective Computing
 
 #### Hardware
 - Circuits
@@ -75,8 +86,8 @@ Gainesville, FL
 <img src="{{ site.baseurl }}/assets/img/about/ippd-logo.png" class="infobox-image">
 {:/}  
 
-**UF IPPD Program with Info Tech**  
-Software Engineer
+**IPPD Collaboration with Info Tech**  
+Software Engineer, Student
 </div>
 
 <div class="unit one-fifth">
@@ -106,16 +117,6 @@ Secretary <span class="align-right">*2014 - 2015*</span>
 **UF Chi Sigma IO (ΧΣΙΟ)**  
 Treasurer <span class="align-right">*2014 - 2015*</span>
 </div>
-
-## Skills
-
-This is what I have experience in and have worked with before, but I'm always looking to add more! You can see what I have made with these in my [work](/work/) and [portfolio](/portfolio/).
-
-**Languages:** JavaScript, HTML, CSS • C++
-
-**Software:** Photoshop, Illustrator
-
-**Libraries & Frameworks:** Node.js, React.js, jQuery, Socket.io • Bootstrap, SASS/LESS • Amazon Web Services (EC2, DynamoDB, Lambda, Elastic Beanstalk) • Unity
 
 ---
 

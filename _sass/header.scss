@@ -37,6 +37,7 @@ header {
 		font-size: 1.25em;
 		font-weight: 700;
 		line-height: 1;
+		letter-spacing: -0.25px;
 		padding-bottom: $spacer/2;
 
 		@media #{$mid-point} {
@@ -74,7 +75,7 @@ nav {
 
 	a {
 		margin-right: $spacer;
-		color: $light-darker-color;
+		color: $dark-ligher-color;
 		display: inline-block;
 
 		&:last-child {

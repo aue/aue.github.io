@@ -1,0 +1,15 @@
+---
+title: Projects
+description: Selections of recent work.
+permalink: /projects/
+---
+{% include project-highlights.html %}
+
+<ul class="projects">
+	{% for project in site.data.projects %}
+		<li>
+			<h1 class="title"><a href="{{ project.link }}">{{ project.title }}</a></h1>
+			<p class="subtext">{{ project.subtext }}</p>
+		</li>
+	{% endfor %}
+</ul>

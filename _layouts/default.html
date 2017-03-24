@@ -11,70 +11,41 @@
 	</head>
 	<body>
 		{% if page.url == '/' %}
-		<div id="splash">
-			<div class="photo"></div>
-		</div>
-		<div class="splash-spacer"></div>
-
-		<script>
-		// Splash
-		var img = new Image();
-		img.onload = function() {
-			document.getElementById('splash').classList.add('active');
-		}
-		img.src = 'http://localhost:4000/assets/images/emmad-mazhari-216134.jpg';
-
-		// Header
-		var last_known_scroll_position = 0;
-		var ticking = false;
-		var pinned = false;
-
-		function doSomething(scroll_pos) {
-		  if (scroll_pos <= window.innerHeight && !pinned) {
-				document.getElementsByTagName('header')[0].classList.add('pinned');
-				pinned = true;
-			}
-			else if (scroll_pos > window.innerHeight && pinned) {
-				document.getElementsByTagName('header')[0].classList.remove('pinned');
-				pinned = false;
-			}
-		}
-
-		window.addEventListener('scroll', function(e) {
-		  last_known_scroll_position = window.scrollY;
-		  if (!ticking) {
-		    window.requestAnimationFrame(function() {
-		      doSomething(last_known_scroll_position);
-		      ticking = false;
-		    });
-		  }
-		  ticking = true;
-		});
-		</script>
+			{% include splash.html %}
 		{% endif %}
 
-		{% include header.html %}
-		<article>
-			{{ content }}
-		</article>
-		<footer>
-			<div class="container">
-				<div class="footer-columns">
-					{% for column in site.data.footer %}
-					<ul class="footer-links">
-						{% for link in column.links %}
-							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon }}-icon"{% endif %}>
-								{% if link.social_icon %}
-									{% include social-icon.html icon=link.social_icon %}
-								{% endif %}
-								{{ link.name }}</a></li>
+		<div id="container">
+			{% include header.html %}
+			<article>
+				{{ content }}
+			</article>
+			<footer>
+				<section>
+					{% comment %}
+					<div class="footer-columns">
+						{% for column in site.data.footer %}
+						<ul class="footer-links">
+							{% for link in column.links %}
+								<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon }}-icon"{% endif %}>
+									{% if link.social_icon %}
+										{% include social-icon.html icon=link.social_icon %}
+									{% endif %}
+									{{ link.name }}</a></li>
+							{% endfor %}
+						</ul>
 						{% endfor %}
-					</ul>
-					{% endfor %}
-				</div>
-				<p class="copyright">&copy; {{ site.time | date: '%Y' }} Encore List. • <a href="#">Contact</a> • <a href="#">Privacy</a></p>
-			</div>
-		</footer>
+					</div>
+					{% endcomment %}
+					<div class="copyright">
+						<a class="site-name" href="#">
+							<span class="initials">AY</span>
+							<span class="message">Back to top?</span>
+						</a>
+						<p>&copy; {{ site.time | date: '%Y' }} {{site.title}}.</p>
+					</div>
+				</section>
+			</footer>
+		</div>
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>

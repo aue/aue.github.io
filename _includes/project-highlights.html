@@ -1,0 +1,10 @@
+<ul class="project-highlights">
+	{% for project in site.data.project-highlights %}
+		<li style="background-image: url('/assets/images/projects/{{ project.image }}')">
+			<a href="{{ project.link }}">
+				<h1 class="title">{{ project.title }}</h1>
+				<div class="subtext">{{ project.subtext }}</div>
+			</a>
+		</li>
+	{% endfor %}
+</ul>

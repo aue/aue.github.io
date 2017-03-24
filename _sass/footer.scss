@@ -67,15 +67,57 @@
 }
 
 footer {
-	padding: $spacer-alt 0;
-	border-top: 1px solid $light-darker-color;
+	padding: 0 $spacer-alt $spacer-alt;
 	position: relative;
 
 	max-width: $site-width;
-	margin: $spacer-alt auto 0;
+	margin: 0 auto;
+
+	section {
+		border-top: 1px solid $light-darker-color;
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 0;
+	}
 
 	.copyright {
 		text-align: center;
+
+		.site-name {
+			height: 30px;
+			font-weight: 500;
+			border: 2px solid $blue-color;
+			display: inline-block;
+			color: $blue-color;
+			text-align: center;
+			padding: 0 0.45em;
+			width: 50px;
+			transition: 0.25s all ease-out;
+			overflow: hidden;
+
+			.initials {
+				font-size: 1.1765rem;
+				line-height: 1.35em;
+				letter-spacing: -1px;
+			}
+
+			.message {
+				display: none;
+				white-space: nowrap;
+			}
+
+			&:hover, &:active {
+				width: 120px;
+
+				.initials {display: none;}
+				.message {display: inline;}
+			}
+		}
+
+		p {
+			margin-top: $spacer/6;
+			margin-bottom: 0;
+		}
 	}
 
 	.footer-columns {

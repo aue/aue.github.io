@@ -1,10 +1,14 @@
+#container {
+	background: $white-color;
+}
+
 article {
 	max-width: $site-width;
 	margin: 0 auto;
 }
 
 section {
-	padding: $spacer-alt 0;
+	padding: $spacer-alt;
 
 	.section-header {
 		border-bottom: 1px solid $light-darker-color;
@@ -32,11 +36,10 @@ section {
 			font-family: $font-family-serif;
 			line-height: $line-height-content;
 			max-width: $site-content-width;
-			margin: 0 auto;
-			padding-bottom: $spacer;
+			margin: 0 auto $spacer;
 
 			&:last-of-type {
-				padding-bottom: 0;
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -58,8 +61,6 @@ section {
 .page h2 {
 	text-align: center;
 }
-
-
 
 img {
 	width: 100%;

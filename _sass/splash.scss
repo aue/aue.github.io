@@ -1,12 +1,15 @@
 #splash {
-  background: $dark-color;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
   overflow: hidden;
+  height: 100vh;
+
+  .background {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
 
   .photo {
     z-index: 1;
@@ -42,17 +45,12 @@
   }
 
   .content {
-    z-index: 3;
     color: $white-color;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 100%;
     transform: scale(0.9);
     opacity: 0;
 
@@ -72,6 +70,7 @@
 
     .subtext {
       margin-top: $spacer/2;
+      color: rgba($white-color, 0.75);
     }
   }
 
@@ -80,10 +79,6 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-
-.splash-spacer {
-  height: 100vh;
 }
 
 @keyframes zoomScale {

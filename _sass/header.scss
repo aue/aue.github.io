@@ -11,12 +11,6 @@ header {
 		bottom: 0;
 		left: 0;
 
-		&.pinned {
-			height: 100vh;
-			position: absolute;
-			top: 100vh;
-		}
-
 		@include flexbox;
 		@include flex-direction(column);
 		@include justify-content(space-between);

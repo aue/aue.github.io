@@ -3,10 +3,11 @@
 		<div class="title">{{site.title}}</div>
 		<div class="subtext">Designer, developer, UF CSE almost-grad</div>
 	</div>
-	<div class="mask"></div>
-	<div class="photo"></div>
+	<div class="background">
+		<div class="mask"></div>
+		<div class="photo"></div>
+	</div>
 </div>
-<div class="splash-spacer"></div>
 
 <script>
 // Splash
@@ -15,31 +16,4 @@ img.onload = function() {
 	document.getElementById('splash').classList.add('active');
 }
 img.src = 'http://localhost:4000/assets/images/emmad-mazhari-216134.jpg';
-
-// Header
-var last_known_scroll_position = 0;
-var ticking = false;
-var pinned = false;
-
-function doSomething(scroll_pos) {
-	if (scroll_pos <= window.innerHeight && !pinned) {
-		document.getElementsByTagName('header')[0].classList.add('pinned');
-		pinned = true;
-	}
-	else if (scroll_pos > window.innerHeight && pinned) {
-		document.getElementsByTagName('header')[0].classList.remove('pinned');
-		pinned = false;
-	}
-}
-
-window.addEventListener('scroll', function(e) {
-	last_known_scroll_position = window.scrollY;
-	if (!ticking) {
-		window.requestAnimationFrame(function() {
-			doSomething(last_known_scroll_position);
-			ticking = false;
-		});
-	}
-	ticking = true;
-});
 </script>

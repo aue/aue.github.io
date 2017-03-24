@@ -1,0 +1,38 @@
+#splash {
+  background: $dark-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+
+  .photo {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("images/emmad-mazhari-216134.jpg");
+    opacity: 0;
+    transform: translateZ(0);
+    transition: 1s ease-out opacity;
+  }
+
+  &.active .photo {
+    opacity: 1;
+    animation: 16s forwards zoomScale;
+  }
+}
+
+.splash-spacer {
+  height: 100vh;
+}
+
+@keyframes zoomScale {
+  0% {
+    transform: scale(1.2) rotate(.02deg)
+  }
+  to {
+    transform: scale(1) rotate(.02deg)
+  }
+}

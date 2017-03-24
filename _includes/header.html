@@ -1,49 +1,27 @@
-<header class="site-header{% if page.url == '/' %} home{% endif %}">
+<header>
+	<div class="site-name">
+		<a href="{{ site.baseurl }}/">
+			<span>Abraham Yuen</span>
+		</a>
+	</div>
 
-  <div class="site-sidebar">
-    <div class="site-title">
-      <a href="{{ site.baseurl }}/" title="Home page">
-        <em>Site of</em>
-        <span href="{{ site.baseurl }}/" class="name">Abraham Yuen</span>
-      </a>
-    </div>
+	<nav>
+		{% for link in site.data.navigation %}
+			{% assign class = "" %}
+			{% if link.highlight %}
+				{% assign class = class | append: " highlight" %}
+			{% endif %}
 
-    <nav class="site-nav">
-      {% for link in site.navigation %}
-        {% assign current = nil %}
-        {% if page.url contains link.url %}
-          {% if page.url == link.url %}
-            {% assign current = 'class="current"' %}
-          {% elsif link.url != "/" %}
-            {% assign current = 'class="current"' %}
-          {% endif %}
-        {% endif %}
-      <a href="{{ link.url | prepend: site.baseurl }}" {{ current }} {% if link.desc %} title="{{ link.desc }}" {% endif %}>
-        <span>{{ link.title }}</span>
-      </a>
-      {% endfor %}
-    </nav>
-  </div>
+			{% if link.link == page.url %}
+				{% assign class = class | append: " active" %}
+			{% endif %}
+			<a href="{% include relative-src.html src=link.link %}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
+		{% endfor %}
+	</nav>
 
-
-  <div class="site-photos">
-    <div class="photo" data-active-photo="one">
-      {% if page.url == '/' %}
-      <div class="progress">
-        <div class="bar"></div>
-      </div>
-
-      <div class="inner-photo three"></div>
-      <div class="inner-photo two"></div>
-      {% endif %}
-      <div class="inner-photo one"></div>
-    </div>
-
-    {% comment %}
-    <div class="faux-photo one"></div>
-    <div class="faux-photo two"></div>
-    {% endcomment %}
-  </div>
-
+	<div class="contact-links">
+		{% include social-icon.html icon="Facebook" %}
+		{% include social-icon.html icon="LinkedIn" %}
+		{% include social-icon.html icon="Twitter" %}
+	</div>
 </header>
-<!-- site-header -->

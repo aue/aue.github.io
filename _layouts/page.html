@@ -1,16 +1,19 @@
 ---
 layout: default
 ---
-<article class="page">
+<section>
+	<div class="section-header">
+		{% if page.heading %}
+			<h1>{{ page.heading }}</h1>
+		{% elsif page.title and page.layout != 'archive' %}
+			<h1>{{ page.title }}</h1>
+		{% endif %}
+		{% if page.description %}
+			<span class="subtext">{{ page.description }}</span>
+		{% endif %}
+	</div>
 
-  {% if page.subtitle %}
-  <header class="page-header">
-    <h1 class="page-title">{{ page.subtitle }}</h1>
-  </header>
-  {% endif %}
-
-  <div class="page-content">
-    {{ content }}
-  </div>
-
-</article>
+	<div class="section-content">
+		{{ content }}
+	</div>
+</section>

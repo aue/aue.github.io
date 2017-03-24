@@ -1,62 +1,71 @@
-# The main config file for your Jekyll template
+# ----
+# Site
 
-# Site settings
-title: Abraham Yuen         # used for the html title of every page
-desc: >
-  The personal site of Abraham Yuen. Appreciating, developing, designing, and programming.
+title: Abraham Yuen
+url: "http://www.abrahamyuen.com/"
+baseurl:
+google_analytics_key: "UA-47258938-1"
+google_maps_javascript_api_key:
+disqus_shortname:
 
-url: http://www.abrahamyuen.com      # put your website hosting url here
-baseurl: ''                 # the subpath of your site, e.g. /blog
-permalink: /:year/:title/   # how should we display posts url
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: Turn to do lists into reality. With Encore List, let everyday tasks help you towards your goals.
+author:
+  name:
+  email:
+  twitter:
+social:
+  name:
+  links:
 
-# Meta settings
-email: hello@abrahamyuen.com
-author: Abraham Yuen
+# -----
+# Build
 
-# Put your ga tracking code below
-google_analytics: 'UA-47258938-1'
+collections:
+  staff_members:
+    _hide_content: true
 
-# Pagination settings
-paginate: 5                           # number of posts to show per page
-paginate_path: "/articles/page:num/"  # link scheme for articles, should be letf as is
+paginate: 10
+paginate_path: "/blog/:num/"
+permalink: pretty
 
-# Navigation settings
-# Used to define the navigation menu items
-# > Title is the tile of the navigation item, url the url and desc is the tooltip
-navigation:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: Work
-    url: /work/
-  - title: Portfolio
-    url: /portfolio/
-  - title: Contact
-    url: /contact/
-
-# Used by Jekyll to recognize what is a post and what is a page
 defaults:
   -
     scope:
-      path: ''
-      type: posts
+      path: ""
+      type: "posts"
     values:
-      layout: post
+      layout: "post"
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "index.html"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "contact.html"
+    values:
+      full_width: true
 
-# Markdown parser settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false          # you can change this if you feel like it
-  parse_block_html: true    # allow parsing html inside markdown
+jekyll-archives:
+  enabled:
+    - categories
 
-# Build settings
-include:
-  - _pages                  # all your pages can be put inside pages (except articles)
-exclude:
-  - README.md
-  - vendor
-  - feed.xml
 gems:
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
   - jekyll-paginate
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE

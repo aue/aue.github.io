@@ -1,6 +1,7 @@
 #splash {
   overflow: hidden;
   height: 100vh;
+  position: relative;
 
   .background {
     overflow: hidden;
@@ -25,7 +26,7 @@
   }
 
   &.active .photo {
-    animation: 16s forwards zoomScale;
+    animation: 20s forwards zoomScale;
   }
 
   .mask {

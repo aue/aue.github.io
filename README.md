@@ -1,3 +1,3 @@
-# Encore List Site
+# Personal Site
 
-Site, built on [Hydra](https://github.com/CloudCannon/hydra-jekyll-template).
+Code for my public portfolio. Meant to be as lightweight as possible.

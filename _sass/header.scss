@@ -59,17 +59,20 @@ header {
 		}
 	}
 
-	.contact-links {
-
+	.spacer {
+		display: none;
+		@media #{$mid-point} {
+			display: block;
+			height: $spacer*2;
+		}
 	}
+
 }
 
 nav {
-	padding-bottom: $spacer;
-
 	a {
 		margin-right: $spacer;
-		color: $dark-ligher-color;
+		color: lighten($dark-ligher-color, 10%);
 		display: inline-block;
 
 		&:last-child {
@@ -99,7 +102,7 @@ nav {
 
 			&:hover {
 				background: #fff;
-				color: $brand-color;
+				color: $blue-color;
 			}
 		}
 	}

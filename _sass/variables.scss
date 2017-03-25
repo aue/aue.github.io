@@ -1,11 +1,14 @@
 // Colors
-$brand-color: #A21B35;
-$secondary-brand-color: #F53979;
-$middle-gradient-color: mix($brand-color, $secondary-brand-color, 25%);
-
 $white-color: #FDFDFF;
 $black-color: #333333;
 $blue-color: #5DC0D8;
+$blue-darker-color: darken(#5DC0D8, 20%);
+$blue-ligher-color: lighten(#5DC0D8, 10%);
+
+$theme-blue-color: #2274A5;
+$theme-red-color: #B4436C;
+$theme-orange-color: #F78154;
+$theme-yellow-color: #F2C14E;
 
 $light-color: #FDFDFF;
 $light-darker-color: #D8D8D8;
@@ -28,30 +31,18 @@ $line-height: 1.4706em;
 $line-height-content: 2.0588em;
 
 $font-size-h1: 1.1765rem;
-$font-size-h2: 1rem;
+$font-size-h2: 1.1rem;
 $font-size-h3: 1rem;
 $font-size-h4: 1rem;
 $font-size-h5: 1rem;
 $font-size-h6: 1rem;
 
 // Breakpoints
-$tablet: "(min-width: 450px)";
-$mid-point: "(min-width: 620px)";
-$desktop: "(min-width: 768px)";
+$tablet: "(min-width: 600px)";
+$mid-point: "(min-width: 900px)";
+$desktop: "(min-width: 1200px)";
 
 // Responsive
 $site-header-width: 240px;
 $site-width: 1000px;
 $site-content-width: 650px;
-
-$breakpoints: (
-  sm: 480px,
-  md: 768px,
-  lg: 1024px
-);
-
-$container-widths: (
-  sm: 620px,
-  md: 748px,
-  lg: 960px
-);

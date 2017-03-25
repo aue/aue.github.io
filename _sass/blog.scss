@@ -1,9 +1,28 @@
 .blog-posts {
 	list-style: none;
 	padding: 0;
+	max-width: $site-content-width;
+	margin: 0 auto;
 
 	li {
-		margin: 100px 0;
+		display: block;
+		margin-bottom: $spacer-alt;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.title {
+			margin-bottom: $spacer/6;
+		}
+
+		.details {
+			margin-bottom: $spacer/6;
+		}
+
+		.excerpt {
+
+		}
 	}
 }
 
@@ -45,36 +64,39 @@
 		}
 
 		.date + .category {margin-top: $spacer/2;}
+	}
+}
 
-		.navigation {
-			display: block;
-			width: auto;
-			overflow: hidden;
-			padding-top: $spacer;
+.pagination, .navigation {
+	display: block;
+	width: auto;
+	overflow: hidden;
+	padding-top: $spacer;
 
-			.prev, .next {
-				display: block;
-				width: 50%;
-				float: left;
-			}
-
-			strong {
-				display: block;
-			}
-
-			.next {
-				text-align: right;
-			}
-		}
+	.prev, .next {
+		display: block;
+		width: 50%;
+		float: left;
 	}
 
+	strong {
+		display: block;
+	}
 
-
-
+	.next {
+		text-align: right;
+		float: right;
+	}
 }
 
 .pagination {
-	text-align: center;
+	padding: $spacer 0 0;
+	margin-top: $spacer;
+	border-top: 1px solid $light-darker-color;
+
+	.page-number {
+		text-align: center;
+	}
 }
 
 .blog-filter {
@@ -94,13 +116,13 @@
 }
 
 .blog-filter.cross a {
-	padding-right: 8px;
+	overflow: hidden;
 
 	&:after {
-		content: "x";
-		font-size: .5em;
+		content: "×";
+		font-size: 1.5em;
 		position: relative;
-		bottom: 4px;
-		right: -3px;
+    padding-left: 0.25em;
+		top: 2px;
 	}
 }

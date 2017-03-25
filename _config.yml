@@ -5,28 +5,15 @@ title: Abraham Yuen
 url: "http://www.abrahamyuen.com/"
 baseurl:
 google_analytics_key: "UA-47258938-1"
-google_maps_javascript_api_key:
-disqus_shortname:
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+# Values for jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Turn to do lists into reality. With Encore List, let everyday tasks help you towards your goals.
-author:
-  name:
-  email:
-  twitter:
-social:
-  name:
-  links:
+description: The personal site of Abraham Yuen. Appreciating, developing, designing, and programming.
 
 # -----
 # Build
 
-collections:
-  staff_members:
-    _hide_content: true
-
-paginate: 10
+paginate: 6
 paginate_path: "/blog/:num/"
 permalink: none
 
@@ -47,11 +34,6 @@ defaults:
       path: "index.html"
     values:
       layout: "default"
-  -
-    scope:
-      path: "contact.html"
-    values:
-      full_width: true
 
 jekyll-archives:
   enabled:
@@ -59,9 +41,9 @@ jekyll-archives:
 
 gems:
   - jekyll-archives
+  - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-feed
   - jekyll-paginate
 
 include:
@@ -71,4 +53,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - LICENCE

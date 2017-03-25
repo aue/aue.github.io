@@ -92,7 +92,7 @@ footer {
 			text-align: center;
 			padding: 0 0.45em;
 			width: 50px;
-			transition: 0.25s all ease-out;
+			transition: 0.25s width ease-out;
 			overflow: hidden;
 
 			.initials {
@@ -106,8 +106,19 @@ footer {
 				white-space: nowrap;
 			}
 
-			&:hover, &:active {
+			&:hover {
+				border-color: $blue-darker-color;
+				color: $blue-darker-color;
+			}
+
+			&:active, &:focus {
+				border-color: $blue-ligher-color;
+				color: $blue-ligher-color;
+			}
+
+			&:hover, &:active, &:focus {
 				width: 120px;
+				text-decoration: none;
 
 				.initials {display: none;}
 				.message {display: inline;}

@@ -1,10 +1,21 @@
 {% for post in include.posts %}
-	<li class="blog-post">
-		<h3><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h3>
-		{% include post-title.html post=post %}
-		<div class="post-content">
-			{{ post.excerpt }}
-			<div class="button"><a href="{% include relative-src.html src=post.url %}">Read More</a></div>
-		</div>
+	<li>
+		<h2 class="title">
+			<a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a>
+		</h2>
+
+		{% if post.categories %}
+			<div class="details">
+				{% for category in post.categories %}
+					<span class="blog-filter">
+						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+					</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<p class="excerpt">
+			{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+		</p>
 	</li>
 {% endfor %}

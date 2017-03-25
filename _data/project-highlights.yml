@@ -1,12 +1,15 @@
 - title: Project Title
   subtext: Small description that goes under the title.
+  color: blue
+  link: /
+  image: cat.jpg
+- title: Project Title
+  subtext: Small description that goes under the title.
+  color: orange
   link: /
   image: cat.jpg
 - title: Project Title
   subtext: Small description that goes under the title.
   link: /
-  image: cat.jpg
-- title: Project Title
-  subtext: Small description that goes under the title.
-  link: /
+  color: red
   image: cat.jpg

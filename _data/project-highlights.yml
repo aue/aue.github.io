@@ -1,15 +1,15 @@
-- title: Project Title
-  subtext: Small description that goes under the title.
+- title: VR Conflict Resolution
+  subtext: Using VR to resolve misunderstandings between people.
   color: blue
-  link: /
+  link: /project/design/vr-conflict-resolution.html
   image: highlight-2.png
-- title: Project Title
-  subtext: Small description that goes under the title.
+- title: Affective Magic Mirror
+  subtext: Tracking emotions to get a better night's sleep.
   color: orange
-  link: /
+  link: /project/design/affective-magic-mirror.html
   image: highlight-1.png
-- title: Project Title
-  subtext: Small description that goes under the title.
-  link: /
+- title: Encore List
+  subtext: Earn points for every task complete as motivation.
+  link: /project/app/encore-list.html
   color: red
-  image: cat.jpg
+  image: highlight-3.png

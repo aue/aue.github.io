@@ -1,7 +1,6 @@
 .project-highlights {
 	padding: 0 0 $spacer/2;
 	margin: 0;
-	list-style: none;
 
 	@media #{$tablet} {
 		@include columns(3);
@@ -10,7 +9,7 @@
 		column-gap: $spacer/3;
 	}
 
-	li {
+	.highlight {
 		break-inside: avoid;
 		background-color: $light-darker-color;
 		background-size: cover;
@@ -101,12 +100,15 @@
 .projects {
 	padding: 0;
 	margin: 0;
-	list-style: none;
 	max-width: $site-content-width;
 	margin: $spacer auto 0;
 
-	li {
+	.project {
 		margin-bottom: $spacer;
+
+		.title {
+			margin-bottom: $spacer/3;
+		}
 
 		&:last-child {
 			margin-bottom: 0;

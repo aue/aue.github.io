@@ -5,11 +5,11 @@ redirect_from: "/work/"
 ---
 {% include project-highlights.html %}
 
-<ul class="projects">
+<div class="projects">
 	{% for project in site.data.projects %}
-		<li>
+		<div class="project">
 			<h1 class="title"><a href="{{ project.link }}">{{ project.title }}</a></h1>
 			<p class="subtext">{{ project.subtext }}</p>
-		</li>
+		</div>
 	{% endfor %}
-</ul>
+</div>

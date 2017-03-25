@@ -7,11 +7,12 @@ baseurl:
 google_analytics_key: "UA-47258938-1"
 
 # Values for jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
-description: The personal site of Abraham Yuen. Appreciating, developing, designing, and programming.
+description: The site of Abraham Yuen. Software engineer, developer, and designer.
 
 # -----
 # Build
+sass:
+    style: compressed
 
 paginate: 6
 paginate_path: "/blog/:num/"

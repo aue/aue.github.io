@@ -25,11 +25,26 @@ section {
 	.section-content {
 		padding-top: $spacer;
 
+		h1, h2, h3, h4, h5, h6, p, ul {
+			max-width: $site-content-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		ul {
+			margin-bottom: $spacer;
+			padding: 0 0 0 $spacer/2;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
 		p {
 			font-family: $font-family-serif;
 			line-height: $line-height-content;
-			max-width: $site-content-width;
-			margin: 0 auto $spacer;
+			margin-top: 0;
+			margin-bottom: $spacer;
 
 			&:last-of-type {
 				margin-bottom: 0;
@@ -81,6 +96,13 @@ section {
 
 .cta {
 	margin: 60px 0;
+}
+
+hr {
+	margin: $spacer 0;
+	background: $light-darker-color;
+	border: 0;
+	height: 1px;
 }
 
 img {

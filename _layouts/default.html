@@ -6,9 +6,15 @@
 		<link rel="stylesheet" href="{{ site.baseurl }}/assets/screen.css">
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700|PT+Serif:400,700">
-		{% seo %}
+		{% if page.url == '/' %}
+			<title>{{ site.title }}</title>
+			<meta name="description" content="{{ site.description }}" />
+		{% else %}
+		  {% seo %}
+		{% endif %}
 	</head>
 	<body>
+		{{enableTitle}}
 		{% if page.url == '/' %}
 			{% include splash.html %}
 		{% endif %}

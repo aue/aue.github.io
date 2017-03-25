@@ -1,0 +1,131 @@
+#splash {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+
+  .background {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
+
+  .photo {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("images/splash.jpg");
+    transform: translateZ(0);
+  }
+
+  &.active .photo {
+    animation: 20s forwards zoomScale;
+  }
+
+  .mask {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    background: $dark-color;
+  }
+
+  &.active .mask {
+    transition: 1.5s opacity 0.5s ease-out;
+    opacity: 0;
+  }
+
+  .content {
+    color: $white-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: $spacer/2;
+    text-shadow: 0 0 2.5rem $black-color;
+  }
+
+  .logo {
+    transition: 1s all 0.5s ease-out;
+    transform: scale(0.9);
+    opacity: 0;
+
+    .title {
+      font-size: 2.25em;
+      border: 3px solid $white-color;
+      letter-spacing: -0.75px;
+      color: $white-color;
+      text-align: center;
+      display: block;
+      line-height: 1.6em;
+      font-weight: 500;
+      height: 68px;
+      width: 308px;
+      margin: 0 auto;
+    }
+
+    .subtext {
+      margin-top: $spacer/2;
+      color: rgba($white-color, 0.75);
+    }
+  }
+
+  &.active .logo {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .picture-info {
+    text-align: right;
+    padding: $spacer/6 $spacer/3;
+
+    a {
+      color: $white-color;
+      font-size: 0.75em;
+    }
+  }
+
+  .arrow {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  &.active .arrow {
+    animation: 5s linear 2.5s infinite pulse;
+  }
+
+  .fadeIn {
+    opacity: 0;
+  }
+
+  &.active .fadeIn {
+    transition: 1.5s opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+}
+
+@keyframes zoomScale {
+  0% {
+    transform: scale(1.2) rotate(.02deg)
+  }
+  to {
+    transform: scale(1) rotate(.02deg)
+  }
+}
+
+@keyframes pulse {
+  0%, 48% {transform: translateY(0);}
+  50% {transform: translateY(5px);}
+  52%, 100% {transform: translateY(0);}
+}

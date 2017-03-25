@@ -1,0 +1,26 @@
+<div id="splash">
+	<div class="content">
+		<div class="fadeIn picture-info">
+			<a href="https://flic.kr/p/RBjywC" target="_blank">Meridian Gate, Beijing</a>
+		</div>
+		<div class="logo">
+			<div class="title">{{site.title}}</div>
+			<div class="subtext">Developer, Designer, UF CS Engineer</div>
+		</div>
+		<div class="fadeIn arrow">&#9662;</div>
+	</div>
+
+	<div class="background">
+		<div class="mask"></div>
+		<div class="photo"></div>
+	</div>
+</div>
+
+<script>
+// Splash
+var img = new Image();
+img.onload = function() {
+	document.getElementById('splash').classList.add('active');
+}
+img.src = '/assets/images/splash.jpg';
+</script>

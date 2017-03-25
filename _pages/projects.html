@@ -1,0 +1,16 @@
+---
+title: Projects
+description: A selection of works.
+permalink: /projects/
+redirect_from: "/work/"
+---
+{% include project-highlights.html %}
+
+<div class="projects">
+	{% for project in site.data.projects %}
+		<div class="project">
+			<h1 class="title"><a href="{{ project.link }}">{{ project.title }}</a></h1>
+			<p class="subtext">{{ project.subtext }}</p>
+		</div>
+	{% endfor %}
+</div>

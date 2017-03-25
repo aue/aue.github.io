@@ -1,0 +1,15 @@
+- title: VR Conflict Resolution
+  subtext: Using VR to resolve misunderstandings between people.
+  color: blue
+  link: /project/design/vr-conflict-resolution.html
+  image: highlight-2.png
+- title: Affective Magic Mirror
+  subtext: Tracking emotions to get a better night's sleep.
+  color: orange
+  link: /project/design/affective-magic-mirror.html
+  image: highlight-1.png
+- title: Encore List
+  subtext: Earn points for every task complete as motivation.
+  link: /project/app/encore-list.html
+  color: red
+  image: highlight-3.png

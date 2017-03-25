@@ -1,28 +1,57 @@
 ---
 layout: default
 ---
-<article class="post">
+<section class="blog-post">
+	<div class="section-header">
+		{% if page.categories %}
+			<span class="subtext">
+				{% for category in page.categories %}
+					<span class="blog-filter">
+						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+					</span>
+				{% endfor %}
+			</span>
+		{% endif %}
+		{% if page.heading %}
+			<h1>{{ page.heading }}</h1>
+		{% elsif page.title and page.layout != 'archive' %}
+			<h1>{{ page.title }}</h1>
+		{% endif %}
+	</div>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <time class="post-date" datetime="{{ page.date }}">
-    {% assign d = page.date | date: "%-d" %}
-    {% assign m = page.date | date: "%B" %}
-    {% case m %}
-      {% when 'April' or 'May' or 'June' or 'July' %}{{ m }}
-      {% when 'September' %}Sept.
-      {% else %}{{ page.date | date: "%b" }}.
-      {% endcase %}
-    {% case d %}
-      {% when '1' or '21' or '31' %}{{ d }}st{% when '2' or '22' %}{{ d }}nd{% when '3' or '23' %}{{ d }}rd{% else %}{{ d }}th{% endcase %}
-    {{ page.date | date: "%Y" }}
-    </time>
-  </header>
+	<div class="section-content">
+		{{ content }}
+	</div>
 
-  <div class="post-content pretty-links">
-    {{ content }}
-  </div>
+	<div class="blog-post-details">
+		<div class="date">
+			{{ page.date | date: "%B %d, %Y" }}
+		</div>
 
-  <em>Thank you for scrolling</em> <img src="{{ site.baseurl }}/assets/img/wink.png" class="emoji left">
+		{% if page.categories %}
+			<div class="category">
+				{% for category in page.categories %}
+					<span class="blog-filter">
+						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+					</span>
+				{% endfor %}
+			</div>
+		{% endif %}
 
-</article>
+		<div class="navigation">
+			<div class="prev">
+				{% if page.previous.url %}
+					<strong>Previous</strong>
+					<a href="{% include relative-src.html src=page.previous.url %}">{{ page.previous.title }}</a>
+				{% endif %}
+			</div>
+
+			<div class="next">
+				{% if page.next.url %}
+					<strong>Next</strong>
+					<a href="{% include relative-src.html src=page.next.url %}">{{ page.next.title }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

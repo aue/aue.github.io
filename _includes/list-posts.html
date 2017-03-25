@@ -1,0 +1,21 @@
+{% for post in include.posts %}
+	<li>
+		<h2 class="title">
+			<a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a>
+		</h2>
+
+		{% if post.categories %}
+			<div class="details">
+				{% for category in post.categories %}
+					<span class="blog-filter">
+						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+					</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<p class="excerpt">
+			{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+		</p>
+	</li>
+{% endfor %}

@@ -1,0 +1,25 @@
+---
+title: Blog
+---
+<ul class="blog-posts">
+	{% include list-posts.html posts=paginator.posts %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+	<!-- Pagination links -->
+	<div class="pagination">
+		<div class="page-number">{{ paginator.page }} of {{ paginator.total_pages }}</div>
+
+		<div class="prev">
+			{% if paginator.previous_page %}
+				<a href="{% include relative-src.html src=paginator.previous_page_path %}">&larr; Newer</a>
+			{% endif %}
+		</div>
+
+		<div class="next">
+			{% if paginator.next_page %}
+				<a href="{% include relative-src.html src=paginator.next_page_path %}">Older &rarr;</a>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<section>
+	<div class="section-header">
+		<h1>Archive</h1>
+		<span class="subtext">
+			<span class="blog-filter cross"><a href="{{ site.baseurl }}/blog/">{{ page.title | capitalize }}</a></span>
+		</span>
+	</div>
+
+	<div class="section-content">
+		<ul class="blog-posts">
+			{% include list-posts.html posts=page.posts %}
+		</ul>
+	</div>
+</section>

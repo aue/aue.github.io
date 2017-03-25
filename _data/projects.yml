@@ -1,0 +1,35 @@
+- title: BetterGaia Extension
+  subtext: Web browser extension for Gaia Online, a social networking website. Peak of 14k weekly users in January 2015.
+  link: http://www.bettergaia.com/
+
+- title: Encore List
+  subtext: Earn points for every task complete as motivation.
+  link: /project/app/encore-list.html
+
+- title: StratuStream Dashboard
+  subtext: An internal digital dashboard converting raw business data into useful business analytics for Info Tech, Inc.
+  link: /project/web/stratustream-dashboard.html
+
+- title: Insect Collection Database
+  subtext: A web application for entomology students to document and share caught insects.
+  link: https://github.com/phillip50/CEN3031-Project
+
+- title: Sportody UX Case Study
+  subtext: Study tasked to find ways to increase user engagement for Sportody.com.
+  link: /project/design/sportody-ux-case-study.html
+
+- title: VR Conflict Resolution
+  subtext: Using VR to resolve misunderstandings between people.
+  link: /project/design/vr-conflict-resolution.html
+
+- title: Affective Magic Mirror
+  subtext: Tracking emotions to get a better night's sleep.
+  link: /project/design/affective-magic-mirror.html
+
+- title: Codename Sun Game
+  subtext: Video game developed in Unity using various AI algorithms (A* search algorithm, health system).
+  link: https://github.com/CodenameSun/CodenameSun
+
+- title: UF Association of Cuban Student Engineers
+  subtext: Designed branding and social media identity.
+  link: /project/design/uf-association-of-cuban-student-engineers.html

@@ -8,7 +8,7 @@
 			<div class="details">
 				{% for category in post.categories %}
 					<span class="blog-filter">
-						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+						<a{% comment %} href="{{ site.baseurl }}/category/{{ category }}/"{% endcomment %}>{{ category | capitalize }}</a>
 					</span>
 				{% endfor %}
 			</div>

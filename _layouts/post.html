@@ -7,7 +7,7 @@ layout: default
 			<span class="subtext">
 				{% for category in page.categories %}
 					<span class="blog-filter">
-						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+						<a{% comment %} href="{{ site.baseurl }}/category/{{ category }}/"{% endcomment %}>{{ category | capitalize }}</a>
 					</span>
 				{% endfor %}
 			</span>
@@ -32,7 +32,7 @@ layout: default
 			<div class="category">
 				{% for category in page.categories %}
 					<span class="blog-filter">
-						<a href="{{ site.baseurl }}/category/{{ category }}/">{{ category | capitalize }}</a>
+						<a{% comment %} href="{{ site.baseurl }}/category/{{ category }}/"{% endcomment %}>{{ category | capitalize }}</a>
 					</span>
 				{% endfor %}
 			</div>

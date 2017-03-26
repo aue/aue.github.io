@@ -32,8 +32,6 @@
 	}
 
 	.section-content {
-		max-width: $site-content-width;
-		margin: 0 auto;
 	}
 
 	h3 {
@@ -108,8 +106,8 @@
     border-radius: 1em;
 
 		&:hover {
-			background: $dark-ligher-color;
-			color: $white-color;
+			//background: $dark-ligher-color;
+			//color: $white-color;
 			text-decoration: none;
 		}
 	}
@@ -119,7 +117,7 @@
 	overflow: hidden;
 
 	&:after {
-		content: "×";
+		content: "x";
 		font-size: 1.5em;
 		position: relative;
     padding-left: 0.25em;

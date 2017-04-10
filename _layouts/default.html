@@ -12,6 +12,20 @@
 		{% else %}
 		  {% seo %}
 		{% endif %}
+		<script>
+		// Scrolling
+		function scrollTo(element, to, duration) {
+			if (duration <= 0) return;
+			var difference = to - element.scrollTop;
+			var perTick = difference / duration * 10;
+
+			setTimeout(function() {
+				element.scrollTop = element.scrollTop + perTick;
+				if (element.scrollTop === to) return;
+				scrollTo(element, to, duration - 10);
+			}, 10);
+		}
+		</script>
 	</head>
 	<body>
 		{{enableTitle}}
@@ -53,6 +67,14 @@
 				</section>
 			</footer>
 		</div>
+
+		<script>
+		// Scrolling for back to top
+		document.querySelector('footer .site-name').onclick = function() {
+			scrollTo(document.body, 0, 345);
+			return false;
+		}
+		</script>
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>

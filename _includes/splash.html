@@ -1,13 +1,15 @@
 <div id="splash">
 	<div class="content">
 		<div class="fadeIn picture-info">
-			<a href="https://flic.kr/p/RBjywC" target="_blank">Meridian Gate, Beijing</a>
+			<a href="https://flic.kr/p/Ssn2xq" target="_blank">CITIC Tower, Central, Hong Kong</a>
 		</div>
 		<div class="logo">
 			<div class="title">{{site.title}}</div>
 			<div class="subtext">Developer, Designer, UF CS Engineer</div>
 		</div>
-		<div class="fadeIn arrow">&#9662;</div>
+		<div class="fadeIn arrow">
+			<a href="#main-content" title="Scroll to main content"></a>
+		</div>
 	</div>
 
 	<div class="background">
@@ -22,5 +24,14 @@ var img = new Image();
 img.onload = function() {
 	document.getElementById('splash').classList.add('active');
 }
-img.src = '/assets/images/splash.jpg';
+var splash = document.querySelector('#splash .background .photo');
+var backgroundImage = window.getComputedStyle(splash).backgroundImage.slice(5, -2);;
+img.src = backgroundImage;
+
+// Scrolling for splash
+document.querySelector('#splash .arrow a').onclick = function() {
+	var mainContent = document.getElementById('main-content');
+	if (mainContent) scrollTo(document.body, mainContent.offsetTop, 345);
+	return false;
+}
 </script>

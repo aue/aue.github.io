@@ -1,6 +1,6 @@
-- title: BetterGaia Extension
+- title: BetterGaia Web Extension
   subtext: Web browser extension for Gaia Online, a social networking website. Peak of 14k weekly users in January 2015.
-  link: http://www.bettergaia.com/
+  link: /project/web/bettergaia.html
 
 - title: Encore List
   subtext: Earn points for every task complete as motivation.
@@ -17,6 +17,10 @@
 - title: Sportody UX Case Study
   subtext: Study tasked to find ways to increase user engagement for Sportody.com.
   link: /project/design/sportody-ux-case-study.html
+
+- title: Care Bear Toy & App
+  subtext: Improving the relationship between a parent and their child.
+  link: /project/design/care-bear-toy-app.html
 
 - title: VR Conflict Resolution
   subtext: Using VR to resolve misunderstandings between people.

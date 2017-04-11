@@ -25,7 +25,7 @@ img.onload = function() {
 	document.getElementById('splash').classList.add('active');
 }
 var splash = document.querySelector('#splash .background .photo');
-var backgroundImage = window.getComputedStyle(splash).backgroundImage.slice(5, -2);;
+var backgroundImage = window.getComputedStyle(splash).backgroundImage.replace(/url\(|\)|"/g,'');
 img.src = backgroundImage;
 
 // Scrolling for splash

@@ -25,13 +25,13 @@ section {
 	.section-content {
 		padding-top: $spacer;
 
-		h1, h2, h3, h4, h5, h6, p, ul {
+		h1, h2, h3, h4, h5, h6, p, ul, ol {
 			max-width: $site-content-width;
 			margin-left: auto;
 			margin-right: auto;
 		}
 
-		ul {
+		ul, ol {
 			margin-bottom: $spacer;
 			padding: 0 0 0 $spacer/2;
 

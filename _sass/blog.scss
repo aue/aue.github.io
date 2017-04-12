@@ -32,6 +32,11 @@
 	}
 
 	.section-content {
+		word-wrap: break-word;
+
+		h1, h2 {
+			margin-bottom: $spacer;
+		}
 	}
 
 	h3 {

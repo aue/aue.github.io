@@ -73,8 +73,7 @@ address {
 }
 
 blockquote {
-	padding: 18px 25px;
-	margin: 0;
+	margin: $spacer;
 	quotes: "\201C""\201D""\2018""\2019";
 
 	.author {
@@ -91,7 +90,7 @@ blockquote {
 }
 
 blockquote:before {
-	color: #ccc;
+	color: $blue-color;
 	content: open-quote;
 	font-size: 4em;
 	line-height: 0.1em;

@@ -25,7 +25,7 @@ section {
 	.section-content {
 		padding-top: $spacer;
 
-		h1, h2, h3, h4, h5, h6, p, ul, ol {
+		h1, h2, h3, h4, h5, h6, p, ul, ol, video, audio {
 			max-width: $site-content-width;
 			margin-left: auto;
 			margin-right: auto;
@@ -38,6 +38,12 @@ section {
 			&:last-of-type {
 				//margin-bottom: 0;
 			}
+		}
+
+		video, audio {
+			margin-top: $spacer;
+			margin-bottom: $spacer;
+			display: block;
 		}
 
 		p {

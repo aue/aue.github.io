@@ -12,7 +12,7 @@
 
 - title: Insect Collection Database
   subtext: A web application for entomology students to document and share caught insects.
-  link: https://github.com/phillip50/CEN3031-Project
+  link: https://github.com/aue/The-Insect-Collection
 
 - title: Sportody UX Case Study
   subtext: Study tasked to find ways to increase user engagement for Sportody.com.
@@ -32,7 +32,7 @@
 
 - title: Codename Sun Game
   subtext: Video game developed in Unity using various AI algorithms (A* search algorithm, health system).
-  link: https://github.com/CodenameSun/CodenameSun
+  link: /project/game/codename-sun-game.html
 
 - title: UF Association of Cuban Student Engineers
   subtext: Designed branding and social media identity.

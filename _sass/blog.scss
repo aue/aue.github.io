@@ -68,6 +68,17 @@
 
 		.date + .category {margin-top: $spacer/2;}
 	}
+
+	img[alt="Screen"] {
+		box-shadow: 0 0 $spacer/2 $light-darker-color;
+	}
+
+	img[alt="Phone Screen"], img[alt="Small Screen"] {
+		max-width: $site-content-width/2;
+		margin: 0 auto;
+		display: block;
+		box-shadow: 0 0 $spacer/2 $light-darker-color;
+	}
 }
 
 .pagination, .navigation {

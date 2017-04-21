@@ -17,6 +17,8 @@ His projects personally intrigue me, on how such contrast of man-made constructi
 
 Álvaro Siza’s ability to differ and contrast, while staying timeless since starting in the 1960s is one of the many reasons I decided to look into his background and projects. His buildings are a blend of tradition and modernism, even when both seem mutually exclusive. As quoted from Carlos Castanheira, an architect who worked closely with Siza, “These works will remain recent even when Siza comes to be one hundred years old… Such is timeless architecture. Such should be the architecture of our times.”<sup>1</sup> Álvaro Siza’s ability to stay timeless even when he took up the profession of architecture over half a century ago and nearing his eighties proves Siza’s workmanship and resilience in his trade.
 
+> These works will remain recent even when Siza comes to be one hundred years old… Such is timeless architecture. Such should be the architecture of our times.
+
 But before diving headfirst into Álvaro Siza and his style and skillset, we first need to dive into where his design principles originate from, which will be done by looking at the history of modernist and contemporary architecture and exploring their own origins. And after that, we will look into Álvaro Siza himself by looking into his background, his upbringing on architecture, and his design principles. And finally, with Siza’s numerous collaborations and works, I will look into how he embraced some principles of modernism while looking at his own contemporary and traditional influences by going over and discussing some selected works and projects of his.  
 
 # Modernist Architecture

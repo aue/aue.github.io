@@ -1,23 +1,23 @@
 <header>
-	<div class="site-name">
-		<a href="{{ site.baseurl }}/">
-			<span>{{site.title}}</span>
-		</a>
+	<div class="page-width">
+		<div class="site-name">
+			<a href="{{ site.baseurl }}/">
+				<span>{{ site.header_title }}</span>
+			</a>
+		</div>
+
+		<nav>
+			{% for link in site.data.navigation %}
+				{% assign class = "" %}
+				{% if link.highlight %}
+					{% assign class = class | append: " highlight" %}
+				{% endif %}
+
+				{% if link.link == page.url %}
+					{% assign class = class | append: " active" %}
+				{% endif %}
+				<a href="{% include relative-src.html src=link.link %}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
+			{% endfor %}
+		</nav>
 	</div>
-
-	<nav>
-		{% for link in site.data.navigation %}
-			{% assign class = "" %}
-			{% if link.highlight %}
-				{% assign class = class | append: " highlight" %}
-			{% endif %}
-
-			{% if link.link == page.url %}
-				{% assign class = class | append: " active" %}
-			{% endif %}
-			<a href="{% include relative-src.html src=link.link %}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
-		{% endfor %}
-	</nav>
-
-	<div class="spacer"></div>
 </header>

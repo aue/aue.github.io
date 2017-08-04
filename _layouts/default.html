@@ -29,44 +29,50 @@
 	</head>
 	<body>
 		{{enableTitle}}
+
+		{% comment %}
 		{% if page.url == '/' %}
 			{% include splash.html %}
 		{% endif %}
+		{% endcomment %}
 
+		{% include header.html %}
+
+		{% if page.url == '/' %}
+		<div id="container-home">
+		{% else %}
 		<div id="container">
-			{% include header.html %}
-
+		{% endif %}
 			<article>
 				{{ content }}
 			</article>
-
-			<footer>
-				<section>
-					{% comment %}
-					<div class="footer-columns">
-						{% for column in site.data.footer %}
-						<ul class="footer-links">
-							{% for link in column.links %}
-								<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon }}-icon"{% endif %}>
-									{% if link.social_icon %}
-										{% include social-icon.html icon=link.social_icon %}
-									{% endif %}
-									{{ link.name }}</a></li>
-							{% endfor %}
-						</ul>
-						{% endfor %}
-					</div>
-					{% endcomment %}
-					<div class="copyright">
-						<a class="site-name" href="#">
-							<span class="initials">AY</span>
-							<span class="message">Back to top?</span>
-						</a>
-						<p>&copy; {{ site.time | date: '%Y' }} {{site.title}}.</p>
-					</div>
-				</section>
-			</footer>
 		</div>
+
+		<footer>
+			{% comment %}
+			<div class="footer-columns">
+				{% for column in site.data.footer %}
+				<ul class="footer-links">
+					{% for link in column.links %}
+						<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon }}-icon"{% endif %}>
+							{% if link.social_icon %}
+								{% include social-icon.html icon=link.social_icon %}
+							{% endif %}
+							{{ link.name }}</a></li>
+					{% endfor %}
+				</ul>
+				{% endfor %}
+			</div>
+			{% endcomment %}
+
+			<div class="copyright page-width">
+				<a class="site-name" href="#">
+					<span class="initials">AY</span>
+					<span class="message">Back to top?</span>
+				</a>
+				<p>&copy; {{ site.time | date: '%Y' }} {{site.title}}.</p>
+			</div>
+		</footer>
 
 		<script>
 		// Scrolling for back to top

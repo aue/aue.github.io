@@ -6,6 +6,10 @@
   subtext: Earn points for every task complete as motivation.
   link: /project/app/encore-list.html
 
+- title: Senty
+  subtext: Google Chrome Extension that shows you the tone of what you type into any text box on the web.
+  link: /project/web/senty-conversation-analysis-web-extension.html
+
 - title: StratuStream Dashboard
   subtext: An internal digital dashboard converting raw business data into useful business analytics for Info Tech, Inc.
   link: /project/web/stratustream-dashboard.html

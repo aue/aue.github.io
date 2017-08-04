@@ -1,19 +1,9 @@
 header {
 	color: $white-color;
 	padding: $spacer;
-	background: $dark-color;
 
-	@media #{$mid-point} {
-		width: $site-header-width;
-		position: fixed;
-		z-index: 1;
-		top: 0;
-		bottom: 0;
-		left: 0;
-
-		@include flexbox;
-		@include flex-direction(column);
-		@include justify-content(space-between);
+	@media #{$tablet} {
+		padding: $spacer*2;
 	}
 
 	a {
@@ -28,10 +18,9 @@ header {
 	}
 
 	.site-name {
-		font-size: 1.25em;
-		font-weight: 700;
+		font-size: 2.35em;
 		line-height: 1;
-		letter-spacing: -0.25px;
+		letter-spacing: -1px;
 		padding-bottom: $spacer/2;
 
 		@media #{$mid-point} {
@@ -39,14 +28,12 @@ header {
 		}
 
 		a {
-			border: 2px solid $blue-color;
+			border: 3px solid $blue-color;
 			color: $blue-color;
-			text-align: center;
-			display: block;
-			line-height: 35px;
+			display: inline-block;
+			line-height: 54px;
 			font-weight: 500;
-			height: 38px;
-			width: 180px;
+			padding: 0 19px;
 		}
 
 		svg {
@@ -74,6 +61,11 @@ nav {
 		margin-right: $spacer;
 		color: lighten($dark-ligher-color, 10%);
 		display: inline-block;
+		transition: color 0.25s;
+
+		@media #{$tablet} {
+			margin-right: $spacer*1.5;
+		}
 
 		&:last-child {
 			margin-right: 0;
@@ -83,27 +75,19 @@ nav {
 			color: $white-color;
 		}
 
-		@media #{$mid-point} {
-			margin: 5px 0;
-			padding: 2.5px 0;
-			display: block;
-		}
-
 		&.active {
 			color: $white-color;
 			font-weight: 600;
 		}
 	}
 
-	@media #{$mid-point} {
-		a.highlight {
-			border: 1px #ccc solid;
-			border-radius: 5px;
+	a.highlight {
+		border: 1px #ccc solid;
+		border-radius: 5px;
 
-			&:hover {
-				background: #fff;
-				color: $blue-color;
-			}
+		&:hover {
+			background: #fff;
+			color: $blue-color;
 		}
 	}
 }

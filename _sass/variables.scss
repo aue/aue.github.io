@@ -9,6 +9,10 @@ $theme-blue-color: #2274A5;
 $theme-red-color: #B4436C;
 $theme-orange-color: #F78154;
 $theme-yellow-color: #F2C14E;
+$theme-green-color: #5FAD56;
+$theme-brown-color: #A57548;
+$theme-purple-color: #9756AD;
+$theme-light-blue-color: #48B2E2;
 
 $light-color: #FDFDFF;
 $light-darker-color: #D8D8D8;
@@ -28,9 +32,10 @@ $font-size-root: 17px;
 $font-size: 1rem;
 
 $line-height: 1.4706em;
+$line-height-headline: 1.25em;
 $line-height-content: 2.0588em;
 
-$font-size-h1: 1.1765rem;
+$font-size-h1: 2.353rem;
 $font-size-h2: 1.1rem;
 $font-size-h3: 1rem;
 $font-size-h4: 1rem;
@@ -38,11 +43,11 @@ $font-size-h5: 1rem;
 $font-size-h6: 1rem;
 
 // Breakpoints
-$tablet: "(min-width: 600px)";
-$mid-point: "(min-width: 900px)";
+$tablet: "(min-width: 768px)";
+$mid-point: "(min-width: 1000px)";
 $desktop: "(min-width: 1200px)";
 
 // Responsive
-$site-header-width: 240px;
-$site-width: 1000px;
+$site-width: 1140px;
+$site-article-width: 900px;
 $site-content-width: 650px;

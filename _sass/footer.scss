@@ -67,11 +67,13 @@
 }
 
 footer {
-	padding: 0 $spacer-alt $spacer-alt;
 	position: relative;
+	color: $white-color;
+	padding: $spacer;
 
-	max-width: $site-width;
-	margin: 0 auto;
+	@media #{$tablet} {
+		padding: $spacer*2;
+	}
 
 	section {
 		border-top: 1px solid $light-darker-color;
@@ -81,7 +83,7 @@ footer {
 	}
 
 	.copyright {
-		text-align: center;
+		text-align: right;
 
 		.site-name {
 			height: 30px;

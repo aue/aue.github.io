@@ -26,9 +26,16 @@
 	}
 }
 
+section .section-content ul.blog-posts {padding-left: 0;}
+
 .blog-post {
 	.section-header {
-		.subtext {padding-top: 0; padding-bottom: $spacer/2;}
+		.subtext {
+			padding-top: 0;
+			padding-bottom: $spacer;
+			margin-top: 0;
+			margin-bottom: -$spacer/3;
+		}
 	}
 
 	.section-content {
@@ -81,9 +88,7 @@
 	}
 }
 
-.pagination, .navigation {
-	display: block;
-	width: auto;
+.navigation {
 	overflow: hidden;
 	padding-top: $spacer;
 
@@ -104,12 +109,17 @@
 }
 
 .pagination {
-	padding: $spacer 0 0;
-	margin-top: $spacer;
+	overflow: hidden;
 	border-top: 1px solid $light-darker-color;
+	padding-top: $spacer*2;
+	text-align: right;
 
 	.page-number {
-		text-align: center;
+	}
+
+	.prev, .next {
+		display: inline-block;
+		margin-left: $spacer*1.5;
 	}
 }
 

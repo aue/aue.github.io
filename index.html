@@ -2,35 +2,21 @@
 title: Home
 layout: default
 ---
-<section id="main-content">
-	<div class="section-header">
-		<h1>Intro</h1>
+<div class="project-highlights">
+	<div class="highlight intro dark">
+		<a>
+			<h1 class="title">My name is <br>Abraham Yuen.</h1>
+			<div class="subtext">Developer, designer, engineer— this is where I showcase my work.</div>
+		</a>
 	</div>
-	<div class="section-content">
-		<p>My name is Abraham Yuen. Software engineer, developer, and designer— this is where I showcase my work.</p>
-		<div class="center-text" style="margin-top: 30px;">
-			<a href="/about/" class="button">About</a>
-		</div>
-	</div>
-</section>
 
-<section>
-	<div class="section-header">
-		<h1>Recent</h1>
-	</div>
-	<div class="section-content">
-		{% include project-highlights.html %}
-		<div class="center-text">
-			<a href="/projects/" class="button">View Projects</a>
+	{% for project in site.data.project-highlights %}
+		<div class="highlight {{ project.color }}">
+			<a href="{{ project.link }}">
+				<h1 class="title">{{ project.title }}</h1>
+				<div class="subtext">{{ project.subtext }}</div>
+				<img class="picture" src="/assets/images/projects/highlight/{{ project.image }}">
+			</a>
 		</div>
-	</div>
-</section>
-
-<section>
-	<div class="section-header">
-		<h1>Contact</h1>
-	</div>
-	<div class="section-content">
-		<p>Email me at <a href="mailto:hello@abrahamyuen.com">hello@abrahamyuen.com</a>. I'll get back to you as soon as I can.</p>
-	</div>
-</section>
+	{% endfor %}
+</div>

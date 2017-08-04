@@ -1,15 +1,41 @@
-- title: VR Conflict Resolution
-  subtext: Using VR to resolve misunderstandings between people.
-  color: blue
-  link: /project/design/vr-conflict-resolution.html
-  image: highlight-2.png
 - title: Affective Magic Mirror
   subtext: Tracking emotions to get a better night's sleep.
-  color: orange
+  color: yellow
   link: /project/design/affective-magic-mirror.html
-  image: highlight-1.png
+  image: magicmirror.png
+
 - title: Encore List
   subtext: Earn points for every task complete as motivation.
   link: /project/app/encore-list.html
   color: red
-  image: highlight-3.png
+  image: encorelist.png
+
+- title: VR Conflict Resolution
+  subtext: Using VR to resolve misunderstandings between people.
+  color: blue
+  link: /project/design/vr-conflict-resolution.html
+  image: vr.png
+
+- title: Senty
+  subtext: Analyze your tone while on the web.
+  color: green
+  link: /project/web/senty-conversation-analysis-web-extension.html
+  image: senty.png
+
+- title: Care Bear Parenting
+  subtext: Improving relationships between parent and child.
+  link: /project/design/care-bear-toy-app.html
+  color: orange
+  image: carebear.png
+
+- title: BetterGaia
+  subtext: Web browser extension for Gaia Online.
+  link: /project/web/bettergaia.html
+  color: light-blue
+  image: bettergaia.png
+
+- title: StratuStream Dashboard
+  subtext: An internal digital dashboard system with real-time metrics.
+  link: /project/web/stratustream-dashboard.html
+  color: purple
+  image: ss.png

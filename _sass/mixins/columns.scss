@@ -3,3 +3,9 @@
 	-webkit-columns: $value;
 	-moz-columns: $value;
 }
+
+@mixin column-gap($value) {
+	-moz-column-gap: $value;
+	-webkit-column-gap: $value;
+	column-gap: $value;
+}

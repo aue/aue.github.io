@@ -11,7 +11,7 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/yuenabraham/), and con
 
 ---
 
-### Interesting Classes Taken
+### Interesting Courses Taken
 - Affective Computing
 - Artificial Intelligence for Computer Games
 - Brain-Computer Interfaces

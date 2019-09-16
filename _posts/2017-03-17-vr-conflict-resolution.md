@@ -12,7 +12,7 @@ Everyone has had a conversation with someone and said something that was taken n
 Person A will have a BCI headset and a pair of camera glasses during a conversation with B. If user A feels offended by a conversation with user B and would like to inform B, A can simply share the conversation with B. B can now watch the conversation in VR from A’s perspective in order to more accurately understand how A was feeling. While watching, B will be presented with what emotions A was feeling throughout the conversation. B can later take actions to assist in solving the problem if necessary. Users can even share great conversations and memories in order to thank people for their advice if they resulted in feeling better after the conversation.
 
 ## InVision Prototype
-<iframe width="100%" height="866" src="//invis.io/GPAU5C0UD" frameborder="0" allowfullscreen></iframe>
-<iframe width="100%" height="486" src="//invis.io/WYAUAG4Q3" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="866" src="/assets/invision/vr-conflict-resolution-app" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="486" src="/assets/invision/vr-conflict-resolution-headset" frameborder="0" allowfullscreen></iframe>
 
-View an [interactive](https://invis.io/ZUAUAGTAE#/223342311_Home), [two part prototype](https://invis.io/ZUAUAGTAE#/223368493_Recieved_-_1) built with InVision.
+View an [interactive](/assets/invision/vr-conflict-resolution-app), [two part prototype](/assets/invision/vr-conflict-resolution-headset) built with InVision.

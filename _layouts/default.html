@@ -77,7 +77,7 @@
 		<script>
 		// Scrolling for back to top
 		document.querySelector('footer .site-name').onclick = function() {
-			scrollTo(document.body, 0, 345);
+			scrollTo(document.documentElement || document.body, 0, 345);
 			return false;
 		}
 		</script>

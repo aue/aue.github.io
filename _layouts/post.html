@@ -24,9 +24,11 @@ layout: default
 	</div>
 
 	<div class="blog-post-details">
+		{% comment %}
 		<div class="date">
 			{{ page.date | date: "%B %-d, %Y" }}
 		</div>
+		{% endcomment %}
 
 		{% if page.categories %}
 			<div class="category">
